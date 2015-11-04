@@ -1,0 +1,19 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#map {
+	height: 100%;
+}
+
+#infoWindow h1{
+	color: #d12028;
+}
+
+#infoWindow h2{
+	color: #aaa;
+	text-align: right;
+	font-size: 11px;
+}
