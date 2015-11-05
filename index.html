@@ -10,6 +10,8 @@
   </head>
   <body onload="onload()">
     <div class="container-fluid">
+      
+      <!-- top nav begin -->
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -64,59 +66,241 @@
                   <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>
                 </ul>
               </li>
-              <li><a href="#">Login</a></li>
+              <li><a id="loginButton" href="#">Login</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
+      <!-- top nav end -->
+
+      <!-- content begin -->
       <div class="row">
-      
-        <div class="col-sm-2">
+
+        <!--sidebar begin-->
+        <div class="col-sm-4 col-md-3 sidebar">
           
           <div class="row">
             <h2>Lorem ipsum dolor</h2>
             sit amet, consectetur adipiscing elit. Suspendisse quis felis vitae mauris pulvinar dignissim hendrerit quis risus. Fusce in urna eu justo consectetur suscipit. Pellentesque sagittis vel metus in dictum. Sed quis mauris tempus, finibus lectus at, laoreet orci. <br/><br/>
           </div><!--/row-->
-          <div class="col-md-4 center-block">
-            <button type="button" class="btn btn-success btn-lg" aria-label="Left Align">
-              <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Faça uma denúncia
-            </button>
-          </div>
-          <br/><br/><br/>
-          <form class="form-horizontal">
-            <div class="form-group">
-                  <div class="col-xs-10">
-                      <input class="form-control" id="firstName" name="firstName" placeholder="Name" required="" type="text">
-                  </div>
-              </div>
-              <div class="form-group">
-                  <div class="col-xs-10">
-                      <input class="form-control" name="email" placeholder="Email" required="" type="email">
-                  </div>
-              </div>
-              <div class="form-group">
-                  <div class="col-xs-10">
-                      <input class="form-control" name="phone" placeholder="Phone" required="" type="email">
-                  </div>
-              </div>
-              <div class="form-group">
-                  <div class="col-xs-10">
-                      <input class="form-control" placeholder="Website URL" required="" type="homepage">
-                  </div>
-              </div>
-              <div class="form-group">
-                  <div class="col-xs-10">
-                    <button class="btn btn-primary pull-right">Submit</button>
-                  </div>
-              </div>  
-          </form>
-        </div><!--/col-5-->
-        <div class="col-sm-10 map">
+          <button type="button" class="btn btn-success btn-lg center-block" id="denuncie" aria-label="Left Align">
+           <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Faça uma denúncia
+          </button>
+        </div>
+        <!--sidebar end-->
+
+        <!--map begin-->
+        <div class="col-sm-8 col-md-9 map">
           <div class="google-map-canvas" id="map">
           </div>
         </div>
+        <!--map end-->
+        
+        <!--loginWindow begin-->
+        <div id="loginWindow" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Autenticação</h4>
+              </div>
+              <div class="modal-body">
+                  <div class="row">
+                      <div class="col-md-8" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+                          <!-- Nav tabs -->
+                          <ul class="nav nav-tabs">
+                              <li class="active"><a href="#Login" data-toggle="tab">Entrar</a></li>
+                              <li><a href="#Registration" data-toggle="tab">Cadastrar</a></li>
+                          </ul>
+                          <!-- Tab panes -->
+                          <div class="tab-content">
+                              <div class="tab-pane active" id="Login">
+                                  <form role="form" class="form-horizontal">
+                                  <div class="form-group">
+                                      <label for="email" class="col-sm-2 control-label">
+                                          Email</label>
+                                      <div class="col-sm-10">
+                                          <input type="email" class="form-control" id="email1" placeholder="Email" required="" />
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="exampleInputPassword1" class="col-sm-2 control-label">
+                                          Senha</label>
+                                      <div class="col-sm-10">
+                                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" required="" />
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                    <button type="submit" class="btn btn-primary btn-lg col-md-offset-2">Entrar</button>
+                                    <!--<a href="javascript:;">Forgot your password?</a>-->
+                                  </div>
+                                  </form>
+                              </div>
+                              <div class="tab-pane" id="Registration">
+                                  <form role="form" class="form-horizontal">
+                                  <div class="form-group">
+                                      <label for="email" class="col-sm-2 control-label">
+                                          Nome</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control" placeholder="Nome" required="" />
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="email" class="col-sm-2 control-label">
+                                          Email</label>
+                                      <div class="col-sm-10">
+                                          <input type="email" class="form-control" id="email" placeholder="Email" required="" />
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="password" class="col-sm-2 control-label">
+                                          Senha</label>
+                                      <div class="col-sm-10">
+                                          <input type="password" class="form-control" id="password" placeholder="Senha" required="" />
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <button type="submit" class="btn btn-primary btn-lg col-md-offset-2">Cadastrar</button>
+                                  </div>
+                                  </form>
+                              </div>
+                          </div>
+                          <div id="OR" class="hidden-xs">OU</div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="row text-center sign-with">
+                              <div class="col-md-12">
+                                  <h3>Entrar com</h3>
+                              </div>
+                              <div class="col-md-12">
+                                  <div class="btn-group btn-group-justified">
+                                      <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">Google</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
       </div>
+      <!--loginWindow end-->
+
+
+      <!--denuncieWindow begin-->
+        <div id="denuncieWindow" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Denuncie</h4>
+              </div>
+              <div class="modal-body">
+                  <div class="row">
+                      <form role="form" class="form-horizontal">
+                      <div class="form-group">
+                          <label for="email" class="col-sm-2 control-label">
+                              Tipo</label>
+                          <div class="col-sm-10">
+                            <input type="radio" name="tipo" value="0">Falta de médico<br>
+                            <input type="radio" name="tipo" value="1">Demora no atendimento<br>
+                            <input type="radio" name="tipo" value="2">Ambulância demorou<br>
+                            <input type="radio" name="tipo" value="3">Falta de medicação<br>
+                            <input type="radio" name="tipo" value="4">Hospital sem estrutura<br>
+                            <input type="radio" name="tipo" value="5">Vítima de Negligência, Imprudência, Imperícia<br>
+                            <input type="radio" name="tipo" value="6">Falta de vagas (leito)
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="data" class="col-sm-2 control-label">
+                              Data</label>
+                          <div class="col-sm-10">
+                              <input type="text" class="form-control" id="data" placeholder="dd/mm/yyyy" required="" />
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="unidade" class="col-sm-2 control-label">
+                              Unidade de atendimento</label>
+                          <div class="col-sm-10">
+                            <input type="radio" name="unidade" value="publica">Pública<br>
+                            <input type="radio" name="unidade" value="privada">Privada
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="local" class="col-sm-2 control-label">
+                              Local</label>
+                          <div class="col-sm-10">
+                              <input type="text" class="form-control" id="local" placeholder="Local do ocorrido (unidade de saúde)" required="" />
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="estado" class="col-sm-2 control-label">
+                              Estado</label>
+                          <div class="col-sm-10">
+                              <input type="text" class="form-control" id="estado" placeholder="Estado" required="" />
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="municipio" class="col-sm-2 control-label">
+                              Município</label>
+                          <div class="col-sm-10">
+                              <input type="text" class="form-control" id="municipio" placeholder="Município" required="" />
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="municipio" class="col-sm-2 control-label">
+                              Provedor</label>
+                          <div class="col-sm-10">
+                            <input type="radio" name="provedor" value="0">SUS<br>
+                            <input type="radio" name="provedor" value="1">Plano de Saúde
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="plano" class="col-sm-2 control-label">
+                              Plano</label>
+                          <div class="col-sm-10">
+                            <input type="radio" name="plano" value="0">All Saúde<br>
+                            <input type="radio" name="plano" value="1">Amil<br>
+                            <input type="radio" name="plano" value="2">Assim<br>
+                            <input type="radio" name="plano" value="3">Bradesco<br>
+                            <input type="radio" name="plano" value="4">Geap<br>
+                            <input type="radio" name="plano" value="5">Golden<br>
+                            <input type="radio" name="plano" value="6">GreenLine<br>
+                            <input type="radio" name="plano" value="7">Hapvida<br>
+                            <input type="radio" name="plano" value="8">Intermédica<br>
+                            <input type="radio" name="plano" value="9">Itálica<br>
+                            <input type="radio" name="plano" value="10">Marítima<br>
+                            <input type="radio" name="plano" value="11">Memorial<br>
+                            <input type="radio" name="plano" value="12">NortreDame<br>
+                            <input type="radio" name="plano" value="13">Cassi<br>
+                            <input type="radio" name="plano" value="14">São Cristóvão<br>
+                            <input type="radio" name="plano" value="15">Plena<br>
+                            <input type="radio" name="plano" value="16">Real<br>
+                            <input type="radio" name="plano" value="17">Santa Amália<br>
+                            <input type="radio" name="plano" value="18">Santa Casa<br>
+                            <input type="radio" name="plano" value="19">Santa Helena<br>
+                            <input type="radio" name="plano" value="20">Medicol<br>
+                            <input type="radio" name="plano" value="21">SulAmérica<br>
+                            <input type="radio" name="plano" value="22">Unimed<br>
+                            <input type="radio" name="plano" value="23">Universal<br>
+                            <input type="radio" name="plano" value="24">Viva
+                          </div>
+                      </div>
+                      <div class="row">
+                        <button type="submit" class="btn btn-primary btn-lg col-md-offset-2">Denunciar</button>
+                      </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!--denuncieWindow end-->
+
+
     </div>
+    <!-- content end -->
+
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApquJfOtvb3NYITr_IMJE9vDiXmhuwNTA&callback=initMap">
     </script>
