@@ -19,7 +19,7 @@ var TYPE_LABELS = [
 	"Demora no Atendimento",
 	"Demora na Ambul&acirc;ncia",
 	"Hospital sem Estrutura",
-	"Falta de Mediga&ccedil;&atilde;o",
+	"Falta de Medica&ccedil;&atilde;o",
 	"Neglig&ecirc;ncia"
 ];
 
@@ -57,22 +57,31 @@ function initMarkers(){
 			position: data[i].position,
 			index: i
 		});
-		marker.addListener('click', function(){makeWindow(this);});
+		marker.addListener('click', function(){showInfo(this);});
 		markers[i] = marker;
 	}
 }
-	
-function makeWindow(marker)
+
+var infoWindow;
+var selectedMarker;
+function showInfo(marker)
 {
-     var contentString = '<div id="infoWindow">'+
+	if(!infoWindow) infoWindow = new google.maps.InfoWindow();
+	infoWindow.close();
+	
+	if(selectedMarker==marker){
+		selectedMarker = null;
+		return;
+	}
+	selectedMarker = marker;
+	
+	var contentString = '<div id="infoWindow">'+
 		'<h1><img src="' + TYPE_ICONS[data[marker.index].type] + '"/> ' + TYPE_LABELS[data[marker.index].type] + '</h1>'+
 		'<h2>' + data[marker.index].date + '</h2>'+
 		'<p>' + data[marker.index].description + '</p>'+
-	  '</div>'; 
-	var infowindow = new google.maps.InfoWindow({
-		content: contentString
-	});
-	infowindow.open(map, marker);
+	'</div>';
+	infoWindow.setContent(contentString);
+	infoWindow.open(map, marker);
 }
 
 function onload() {
