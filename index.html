@@ -1,17 +1,128 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="shortcut icon" href="images/favicon.png" />
-	<title>Mapa da Saúde</title>
+    <title>Mapa da Sa&uacute;de</title>
   </head>
   <body onload="onload()">
-    <div id="map"></div>
+    <div class="container-fluid">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Menu</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Mapa da Saúde</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+            <form class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Filtro 1 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>
+                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>
+                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>
+                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>
+                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>
+                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Filtro 2 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>
+                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>
+                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>
+                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>
+                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>
+                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Filtro 3 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>
+                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>
+                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>
+                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>
+                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>
+                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Login</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+      <div class="row">
+      
+        <div class="col-sm-2">
+          
+          <div class="row">
+            <h2>Lorem ipsum dolor</h2>
+            sit amet, consectetur adipiscing elit. Suspendisse quis felis vitae mauris pulvinar dignissim hendrerit quis risus. Fusce in urna eu justo consectetur suscipit. Pellentesque sagittis vel metus in dictum. Sed quis mauris tempus, finibus lectus at, laoreet orci. <br/><br/>
+          </div><!--/row-->
+          <div class="col-md-4 center-block">
+            <button type="button" class="btn btn-success btn-lg" aria-label="Left Align">
+              <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Faça uma denúncia
+            </button>
+          </div>
+          <br/><br/><br/>
+          <form class="form-horizontal">
+            <div class="form-group">
+                  <div class="col-xs-10">
+                      <input class="form-control" id="firstName" name="firstName" placeholder="Name" required="" type="text">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="col-xs-10">
+                      <input class="form-control" name="email" placeholder="Email" required="" type="email">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="col-xs-10">
+                      <input class="form-control" name="phone" placeholder="Phone" required="" type="email">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="col-xs-10">
+                      <input class="form-control" placeholder="Website URL" required="" type="homepage">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="col-xs-10">
+                    <button class="btn btn-primary pull-right">Submit</button>
+                  </div>
+              </div>  
+          </form>
+        </div><!--/col-5-->
+        <div class="col-sm-10 map">
+          <div class="google-map-canvas" id="map">
+          </div>
+        </div>
+      </div>
+    </div>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApquJfOtvb3NYITr_IMJE9vDiXmhuwNTA&callback=initMap">
     </script>
     <script type="text/javascript" src="js/markerclusterer-1.0.2.min.js"></script>
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-  	<script type="text/javascript" src="js/script.js"></script>
+    <script type='text/javascript' src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
