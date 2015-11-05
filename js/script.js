@@ -58,8 +58,32 @@ function initMarkers(){
 			index: i
 		});
 		marker.addListener('click', function(){showInfo(this);});
-		markers[i] = marker;
+		markers.push(marker);
 	}
+	var markerCluster = new MarkerClusterer(map, markers, {
+		styles: [{
+			url: 'images/group0.png',
+			height: 66,
+			width: 66,
+			anchor: [25, 0],
+			textColor: '#ffffff',
+			textSize: 13
+		}, {
+			url: 'images/group1.png',
+			height: 66,
+			width: 66,
+			anchor: [25, 0],
+			textColor: '#ffffff',
+			textSize: 13
+		}, {
+			url: 'images/group2.png',
+			height: 66,
+			width: 66,
+			anchor: [25, 0],
+			textColor: '#ffffff',
+			textSize: 13
+		}]
+	});
 }
 
 var infoWindow;
