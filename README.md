@@ -13,11 +13,13 @@ Com base nestas informações poderemos realizar visualizações relacionando as
 ## Como Contribuir
 O projeto é realizado de forma co-autoral e aberta, sem ligações com nenhuma instituição que não a sociedade civíl.
 
-Utilizaremos o Github, onde o código do projeto estará disponível para colaboração de designer e desenvolvedores:
+Utilizaremos o Github, onde o código do projeto estará disponível para colaboração de designers e desenvolvedores:
 
 https://github.com/Vamoss/MapaDaSaude
 
 Através do sistema de Issues e Milestones do Github será estabelecido as metas e principais tarefas a serem desenvolvidas.
+
+Sua colaboração será feita utilizando Pull requests ❤
 
 A definição de onde a ferramenta será publicada ainda está em aberto, apesar de haver a motivação em colaborar com o Movimento Chega de Descaso.
 
@@ -33,4 +35,7 @@ http://www.chegadedescaso.com.br/
 www.ondefuiroubado.com.br
 
 Esta é a principal referência, e seu diferencial é tratar do problema da segurança pública.
+
+### Criativos locais
+http://www.criativoslocais.com.br/
 
