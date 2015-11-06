@@ -1,3 +1,4 @@
+var SIMULATE_DATA = 2000;//0 = use real data;
 /*********
 MAP
 **********/
@@ -108,6 +109,19 @@ function loadData(){
 	$.getJSON(dataUrl, function(json) {
 		console.log("data loaded: " + json);
 		data = json.data;
+		if(SIMULATE_DATA){
+			for(var i = json.data.length; i< SIMULATE_DATA; i++){
+				var copy = json.data[i%json.data.length];
+				data[i] = {};
+				for (var attr in copy) {
+					if (copy.hasOwnProperty(attr)) data[i][attr] = copy[attr];
+				}
+				data[i].position = {
+					lat:Math.floor(Math.random() * 180 - 90),
+					lng:Math.floor(Math.random() * 360 - 180)
+				};
+			}
+		}
 		initMarkers();
 	})
 	.fail(function(jqxhr, textStatus, error) {
@@ -160,7 +174,7 @@ function initUI() {
 INIT
 **********/
 function onload() {
-	initMap();
 	initUI();
+	initMap();
 	loadData();
 }
