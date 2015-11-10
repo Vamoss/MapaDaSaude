@@ -1,4 +1,6 @@
 # Mapa da Saúde
+![Mapa da Saúde](screenshot.png)
+
 ## Objetivo
 * Promover a reflexão dos problemas da área de saúde nacional.
 * Criar uma ferramenta para possibilitar o mapeamento.
@@ -21,10 +23,28 @@ Através do sistema de Issues e Milestones do Github será estabelecido as metas
 
 Sua colaboração será feita utilizando Pull requests ❤
 
-A definição de onde a ferramenta será publicada ainda está em aberto, apesar de haver a motivação em colaborar com o Movimento Chega de Descaso.
+### Executando o projeto
+Instale as dependências
+
+```
+composer install
+npm install
+```
+
+Compilando os CSSs e JSs
+
+```
+gulp
+```
+
+Rodando a aplicação
+
+```
+php artisan serve
+```
 
 ## Chega de Descaso
-A motivação em apoiar o Movimento Chega de Descaso é fruto da luta por justiça de mais uma vítima do sistema de saúde, do qual perdeu sua esposa após esperar 28 horas por uma cirurgia.
+A definição de onde a ferramenta será publicada ainda está em aberto, apesar de haver a motivação em colaborar com o Movimento Chega de Descaso, projeto iniciado pelo Leandro Farias que perdeu sua esposa após esperar 28 horas por uma cirurgia.
 
 Conheça mais sobre este projeto aqui:
 
