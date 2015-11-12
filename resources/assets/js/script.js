@@ -167,7 +167,42 @@ function initUI() {
 
 		console.log( filterOptions );
 		return false;
-	});  
+	});
+
+	//search estabelecimento
+	var engine = new Bloodhound({
+        remote: {
+	      url: '/estabelecimento/query?estabelecimento=%QUERY',
+	      wildcard: '%QUERY'
+	    },
+	    datumTokenizer: Bloodhound.tokenizers.whitespace,
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        limit: 10
+    });
+
+    engine.initialize();
+
+    $("#local").typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 3,
+        sufficient: 5
+    }, {
+        source: engine.ttAdapter(),
+        // This will be appended to "tt-dataset-" to form the class name of the suggestion menu.
+        name: 'estabelecimento',
+        // the key from the array we want to display
+        displayKey: 'estabelecimento',
+        templates: {
+            suggestion: function(e) {
+            	console.log(e);
+            	return '<div>' + e.estabelecimento + '</div>';
+            },
+            empty: [
+                '<div class="empty-message">Não encontramos este estabelecimento</div>'
+            ]
+        }
+    });
 }
 
 /*********

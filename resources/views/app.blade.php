@@ -198,7 +198,7 @@
               </div>
               <div class="modal-body">
                   <div class="row">
-                      <form role="form" class="form-horizontal">
+                    <form role="form" class="form-horizontal">
                       <div class="form-group">
                           <label for="email" class="col-sm-2 control-label">
                               Tipo</label>
@@ -232,20 +232,6 @@
                               Local</label>
                           <div class="col-sm-10">
                               <input type="text" class="form-control" id="local" placeholder="Local do ocorrido (unidade de saúde)" required="" />
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="estado" class="col-sm-2 control-label">
-                              Estado</label>
-                          <div class="col-sm-10">
-                              <input type="text" class="form-control" id="estado" placeholder="Estado" required="" />
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="municipio" class="col-sm-2 control-label">
-                              Município</label>
-                          <div class="col-sm-10">
-                              <input type="text" class="form-control" id="municipio" placeholder="Município" required="" />
                           </div>
                       </div>
                       <div class="form-group">

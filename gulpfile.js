@@ -14,12 +14,11 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.less('app.less');
 
-    mix.styles(['bootstrap.min.css']);
-
     mix.scripts([
     	'markerclusterer-1.0.2.min.js',
     	'jquery-1.11.3.min.js',
     	'bootstrap.min.js',
+    	'typeahead.bundle.min.js',
     	'script.js',
 	]);
 });

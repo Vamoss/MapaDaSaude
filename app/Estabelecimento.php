@@ -1,8 +1,9 @@
 <?php namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-class Posto extends Model {
+class Estabelecimento extends Model {
 	/**
 	 * The attributes that are mass assignable.
 	 *
