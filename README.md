@@ -37,6 +37,12 @@ Compilando os CSSs e JSs
 gulp
 ```
 
+Inicializando o banco de dados com tabelas e dados
+
+```
+php artisan migrate:refresh --seed
+```
+
 Rodando a aplicação
 
 ```
