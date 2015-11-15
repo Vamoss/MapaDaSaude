@@ -14,7 +14,22 @@ function initMap() {
 }
 
 var markers = [];
+var oms;
 function initMarkers(){
+	oms = new OverlappingMarkerSpiderfier(map,
+		{
+			markersWontMove: true,
+			markersWontHide: false,
+			keepSpiderfied: true,
+			nearbyDistance: 30,
+			spiralLengthStart: 15,
+			spiralAngleSeparation: 0.005
+		}
+	);
+	oms.addListener('click', function(marker, event) {
+	  showInfo(marker);
+	});
+	
 	for(var i = 0; i< data.length; i++){
 		var marker = new google.maps.Marker({
 			map: map,
@@ -22,9 +37,10 @@ function initMarkers(){
 			position: data[i].position,
 			index: i
 		});
-		marker.addListener('click', function(){showInfo(this);});
 		markers.push(marker);
+		oms.addMarker(marker);
 	}
+	/*
 	var markerCluster = new MarkerClusterer(map, markers, {
 		styles: [{
 			url: 'img/group0.png',
@@ -49,6 +65,7 @@ function initMarkers(){
 			textSize: 13
 		}]
 	});
+	*/
 }
 
 var infoWindow;

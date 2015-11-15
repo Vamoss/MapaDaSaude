@@ -302,9 +302,7 @@
     </div>
     <!-- content end -->
 
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApquJfOtvb3NYITr_IMJE9vDiXmhuwNTA&callback=initMap">
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApquJfOtvb3NYITr_IMJE9vDiXmhuwNTA"></script>
     {!! Html::script('js/all.js'); !!}
   </body>
 </html>
