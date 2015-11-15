@@ -21,6 +21,9 @@ Route::get('/planos', 'PlanosController@index');
 
 Route::get('/tipos', 'TiposController@index');
 
+Route::get('/estabelecimento', 'EstabelecimentosController@index');
+Route::get('/estabelecimento/query', 'EstabelecimentosController@query');
+
 Route::get('/users', 'UsersController@index');
 
 Route::get('/', 'InicioController@index');

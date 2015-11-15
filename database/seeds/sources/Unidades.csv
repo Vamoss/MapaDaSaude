@@ -1,0 +1,35 @@
+TP_UNIDADE,NOME
+01,Posto de Saúde
+02,Centro de Saúde/ Unidade Básica de Saúde
+04,Policlínica
+05,Hospital Geral
+07,Hospital Especializado
+15,Unidade Mista
+20,Pronto Socorro Geral
+21,Pronto Socorro Especializado
+22,Consultório Isolado
+32,Unidade Móvel Fluvial
+36,Clínica/ Centro de Especialidade
+39,Unidade de Serviço de Apoio de Diagnose e Terapia
+40,Unidade Móvel Terrestre
+42,Unidade Móvel de Nível Pré-hospitalar na Área de Urgência
+43,Farmácia
+50,Unidade de Vigilância em Saúde
+60,Cooperativa
+61,Centro de Parto Normal Isolado
+62,Hospital-Dia Isolado
+67,Laboratório Central de Saúde Pública (LACEN)
+68,Secretaria de Saúde
+69,Centro de Atenção Hemoterápica e/ou Hematológica
+70,Centro de Atenção Psicossocial
+71,CASF (Centro de Apoio a Saúde da Família)
+72,Unidade de Atenção a Saúde Indígena
+73,Pronto Atendimento
+74,Polo Academia de Saúde
+75,Telessaúde
+76,Central de Regulação Médica de Urgências
+77,Serviço de Atenção Domiciliar Isolado (Home Care)
+78,Unidade de Atenção em Regime Residencial
+79,Oficina Ortopédica
+80,Laboratório de Saúde Pública
+81,Central de Regulação do Acesso

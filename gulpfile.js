@@ -18,6 +18,7 @@ elixir(function(mix) {
     	'oms.js',
     	'jquery-1.11.3.min.js',
     	'bootstrap.min.js',
+    	'typeahead.bundle.min.js',
     	'script.js',
 	]);
 });
