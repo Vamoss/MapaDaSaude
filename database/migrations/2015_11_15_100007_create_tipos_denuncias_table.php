@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTiposTable extends Migration {
+class CreateTiposDenunciasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,9 @@ class CreateTiposTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('tipos', function(Blueprint $table)
+		Schema::create('tipos_denuncias', function(Blueprint $table)
 		{
-			$table->increments('id');
+			$table->increments('id')->unsigned();
 			$table->string('nome');
 			$table->string('imagem');
 			$table->timestamps();
@@ -28,7 +28,7 @@ class CreateTiposTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('tipos');
+		Schema::drop('tipos_denuncias');
 	}
 
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMunicipiosTable extends Migration {
+class CreateTiposEstabelecimentosTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,10 @@ class CreateMunicipiosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('municipios', function(Blueprint $table)
+		Schema::create('tipos_estabelecimentos', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->string('uf', 2);
+			$table->integer('id')->index()->unsigned()->unique();;
 			$table->string('nome');
-			$table->float('lat');
-			$table->float('lng');
 			$table->timestamps();
 		});
 	}
@@ -30,7 +27,7 @@ class CreateMunicipiosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('municipios');
+		Schema::drop('tipos_estabelecimentos');
 	}
 
 }
