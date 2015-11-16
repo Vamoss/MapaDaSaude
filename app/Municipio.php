@@ -8,5 +8,5 @@ class Municipio extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['uf', 'nome', 'lat', 'lng'];
+	protected $fillable = ['uf', 'nome'];
 }

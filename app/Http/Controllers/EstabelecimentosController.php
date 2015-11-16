@@ -16,29 +16,6 @@ class EstabelecimentosController extends Controller {
 	 */
 	public function index()
 	{
-		//TODO
-		return '{
-			"data":[
-				{
-					"description":"Não havia nenhum médico disponível",
-					"type":0,
-					"date":"2012-04-23T18:25:43",
-					"position":{"lat":-20.9259488, "lng":-41.8702564}
-				},
-				{
-					"description":"Ambulância chegou depois de 1:00 esperando",
-					"type":2,
-					"date":"2012-04-23T18:25:43",
-					"position":{"lat":-16.9259488, "lng":-41.8702564}
-				},
-				{
-					"description":"O hospital estava sem o remédio que eu precisava",
-					"type":4,
-					"date":"2012-04-23T18:25:43",
-					"position":{"lat":-23.9259488, "lng":-48.8702564}
-				}
-			]
-		}';
 		$estabelecimentos = \App\Estabelecimento::orderBy('nome')->get();
 		return compact('estabelecimentos');
 	}
@@ -46,38 +23,8 @@ class EstabelecimentosController extends Controller {
 	public function query()
 	{
 		$query = Input::get('estabelecimento');
-        //TODO
-		return '[
-			{
-				"co_unidade":1,
-				"estabelecimento":"' . $query . ' something",
-				"type":0,
-				"date":"2012-04-23T18:25:43",
-				"position":{"lat":-20.9259488, "lng":-41.8702564}
-			},
-			{
-				"co_unidade":2,
-				"estabelecimento":"' . $query . ' Não havia nenhum médico disponível",
-				"type":0,
-				"date":"2012-04-23T18:25:43",
-				"position":{"lat":-20.9259488, "lng":-41.8702564}
-			},
-			{
-				"co_unidade":3,
-				"estabelecimento":"' . $query . ' O hospital estava sem o remédio que eu precisava",
-				"type":4,
-				"date":"2012-04-23T18:25:43",
-				"position":{"lat":-23.9259488, "lng":-48.8702564}
-			},
-			{
-				"co_unidade":4,
-				"estabelecimento":"Ambulância chegou depois de 1:00 esperando",
-				"type":2,
-				"date":"2012-04-23T18:25:43",
-				"position":{"lat":-16.9259488, "lng":-41.8702564}
-			}
-		]';
-		$res   = \App\Estabelecimento::where('nome', 'LIKE', "%$query%")->get();
+        $res   = \App\Municipio::select('co_municipio','nome','uf')->where('nome', 'LIKE', "%$query%")->limit(10)->get();
+        //$res   = \App\Estabelecimento::where('nome', 'LIKE', "%$query%")->get();
         return Response::json($res);
 	}
 

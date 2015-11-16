@@ -17,11 +17,11 @@ class CreateDenunciasTable extends Migration {
 			$table->bigIncrements('id')->unsigned();
 			$table->integer('usuario')->index()->unsigned();
 			$table->integer('tipo')->index()->unsigned();
-			$table->integer('co_cnes')->index()->unsigned();
-			$table->integer('co_municipio')->index()->unsigned();
-			$table->string('provedor')->index();//sus, plano
-			$table->string('propriedade')->index();//publico, privado
-			$table->integer('plano')->index()->unsigned();
+			$table->integer('co_cnes')->index()->unsigned()->nullable();
+			$table->integer('co_municipio')->index()->unsigned()->nullable();
+			$table->string('provedor')->index()->nullable();//sus, plano
+			$table->string('propriedade')->index()->nullable();//publico, privado
+			$table->integer('plano')->index()->unsigned()->nullable();
 			$table->timestamp('data')->index();
 			$table->text('descricao');
 			$table->timestamps();

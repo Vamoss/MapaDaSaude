@@ -613,11 +613,16 @@ function initMarkers(){
 	  showInfo(marker);
 	});
 	
-	for(var i = 0; i< data.length; i++){
+	for(var i = 0; i< denuncias.length; i++){
 		var marker = new google.maps.Marker({
 			map: map,
-			icon: TYPE_ICONS[data[i].type],
-			position: data[i].position,
+			icon: tiposDenunciasImagens[denuncias[i].tipo],
+			//TODO
+			//position: denuncias[i].position,
+			position: {
+				lat:Math.floor(Math.random() * 180 - 90),
+				lng:Math.floor(Math.random() * 360 - 180)
+			},
 			index: i
 		});
 		markers.push(marker);
@@ -639,9 +644,9 @@ function showInfo(marker)
 	selectedMarker = marker;
 	
 	var contentString = '<div id="infoWindow">'+
-		'<h1><img src="' + TYPE_ICONS[data[marker.index].type] + '"/> ' + TYPE_LABELS[data[marker.index].type] + '</h1>'+
-		'<h2>' + data[marker.index].date + '</h2>'+
-		'<p>' + data[marker.index].description + '</p>'+
+		'<h1><img src="' + tiposDenunciasImagens[denuncias[marker.index].tipo] + '"/> ' + tiposDenuncias[denuncias[marker.index].tipo] + '</h1>'+
+		'<h2>' + denuncias[marker.index].data + '</h2>'+
+		'<p>' + denuncias[marker.index].descricao + '</p>'+
 	'</div>';
 	infoWindow.setContent(contentString);
 	infoWindow.open(map, marker);
@@ -651,49 +656,31 @@ function showInfo(marker)
 /*********
 DATA
 **********/
-var TYPES = {
-	SEM_MEDICO:0,
-	DEMORA_ATENDIMENTO:1,
-	DEMORA_AMBULANCIA:2,
-	HOSPITAL_SEM_ESTRUTURA:3,
-	FALTA_MEDICACAO:4,
-	NEGLIGENCIA:5
-};
-var TYPE_ICONS = [
-	"img/1.png",
-	"img/2.png",
-	"img/3.png",
-	"img/4.png",
-	"img/5.png",
-	"img/6.png"
-];
-var TYPE_LABELS = [
-	"Sem M&eacute;dico",
-	"Demora no Atendimento",
-	"Demora na Ambul&acirc;ncia",
-	"Hospital sem Estrutura",
-	"Falta de Medica&ccedil;&atilde;o",
-	"Neglig&ecirc;ncia"
-];
-
-var data;
-var dataUrl = "/denuncias";
-function loadData(){
-	if(DEBUG) console.log("data loading: " + dataUrl);
-	$.getJSON(dataUrl, function(json) {
+var tiposDenuncias = [];
+var tiposDenunciasImagens = [];
+var denuncias = [];
+function carregaDados(){
+	if(DEBUG) console.log("carregando dados...");
+	$.getJSON("/dados", function(json) {
 		if(DEBUG){
-			console.log("data loaded:");
+			console.log("dados carregadas:");
 			console.log(json);
 		}
-		data = json.data;
+		
+		for(var i=0; i<json.tiposDenuncias.length; i++){
+			tiposDenuncias[json.tiposDenuncias[i].id] = json.tiposDenuncias[i].nome;
+			tiposDenunciasImagens[json.tiposDenuncias[i].id] = "img/" + json.tiposDenuncias[i].imagem;
+		}
+		
+		denuncias = json.denuncias;
 		if(SIMULATE_DATA){
 			for(var i = json.data.length; i< SIMULATE_DATA; i++){
 				var copy = json.data[i%json.data.length];
-				data[i] = {};
+				denuncias[i] = {};
 				for (var attr in copy) {
-					if (copy.hasOwnProperty(attr)) data[i][attr] = copy[attr];
+					if (copy.hasOwnProperty(attr)) denuncias[i][attr] = copy[attr];
 				}
-				data[i].position = {
+				denuncias[i].position = {
 					lat:Math.floor(Math.random() * 180 - 90),
 					lng:Math.floor(Math.random() * 360 - 180)
 				};
@@ -702,9 +689,8 @@ function loadData(){
 		initMarkers();
 	})
 	.fail(function(jqxhr, textStatus, error) {
-		console.log( "loading data error" );
+		console.log( "erro ao carregar denúncias: " + err );
 		var err = textStatus + ", " + error;
-		console.log( "Request Failed: " + err );
 	})
 }
 
@@ -766,7 +752,7 @@ function initUI() {
 			wildcard: '%QUERY'
 		},
 		datumTokenizer: function(d) {
-			return searchInString(d.estabelecimento);
+			return searchInString(d.nome);
 		},
 		queryTokenizer: Bloodhound.tokenizers.whitespace,
 		limit: 10
@@ -787,7 +773,7 @@ function initUI() {
 		displayKey: 'estabelecimento',
 		templates: {
 			suggestion: function(e) {
-				return '<div>' + e.estabelecimento + '</div>';
+				return '<div>' + e.nome + '</div>';
 			},
 			empty: [
 				'<div class="empty-message">Não encontramos este estabelecimento</div>'
@@ -848,6 +834,6 @@ INIT
 function onload() {
 	initUI();
 	initMap();
-	loadData();
+	carregaDados();
 }
 //# sourceMappingURL=all.js.map

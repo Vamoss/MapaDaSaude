@@ -34,4 +34,16 @@ class InicioController extends Controller {
 		return view('app', ['tiposDenuncias' => $tiposDenuncias]);
 	}
 
+	/**
+	 * Show the startup data
+	 *
+	 * @return Response
+	 */
+	public function dados()
+	{
+		$tiposDenuncias = \App\TipoDenuncia::select('id', 'nome', 'imagem')->get();
+		$denuncias = \App\Denuncia::select('tipo', 'co_cnes', 'co_municipio', 'provedor', 'propriedade', 'plano', 'data', 'descricao')->latest('data')->get();
+		return compact('tiposDenuncias', 'denuncias');
+	}
+
 }
