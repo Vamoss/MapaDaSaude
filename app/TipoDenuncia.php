@@ -2,7 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tipo extends Model {
+class TipoDenuncia extends Model {
+    protected $table = 'tipos_denuncias';
 	/**
 	 * The attributes that are mass assignable.
 	 *

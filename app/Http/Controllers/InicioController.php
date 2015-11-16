@@ -30,7 +30,8 @@ class InicioController extends Controller {
 	 */
 	public function index()
 	{
-		return view('app');
+		$tiposDenuncias = \App\TipoDenuncia::select('id', 'nome', 'imagem')->get();
+		return view('app', ['tiposDenuncias' => $tiposDenuncias]);
 	}
 
 }

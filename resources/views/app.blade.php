@@ -203,13 +203,11 @@
                           <label for="email" class="col-sm-2 control-label">
                               Tipo</label>
                           <div class="col-sm-10">
-                            <input type="radio" name="tipo" value="0">Falta de médico<br>
-                            <input type="radio" name="tipo" value="1">Demora no atendimento<br>
-                            <input type="radio" name="tipo" value="2">Ambulância demorou<br>
-                            <input type="radio" name="tipo" value="3">Falta de medicação<br>
-                            <input type="radio" name="tipo" value="4">Hospital sem estrutura<br>
-                            <input type="radio" name="tipo" value="5">Vítima de Negligência, Imprudência, Imperícia<br>
-                            <input type="radio" name="tipo" value="6">Falta de vagas (leito)
+                            @if (count($tiposDenuncias))
+                                @foreach($tiposDenuncias as $tipoDenuncia)
+                                    <input type="radio" name="tipo" value="{{$tipoDenuncia['id']}}">{{$tipoDenuncia['nome']}}<br>
+                                @endforeach
+                            @endif
                           </div>
                       </div>
                       <div class="form-group">

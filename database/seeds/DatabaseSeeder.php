@@ -10,6 +10,7 @@ class DatabaseSeeder extends Seeder {
 		Model::unguard();
 
 		$this->call('PlanosTableSeeder');
+		$this->call('TiposDenunciasTableSeeder');
 	}
 }
 
@@ -42,5 +43,17 @@ class PlanosTableSeeder extends Seeder {
 		DB::table('planos')->insert(['id' => 23, 'nome' => 'Unimed']);
 		DB::table('planos')->insert(['id' => 24, 'nome' => 'Universal']);
 		DB::table('planos')->insert(['id' => 25, 'nome' => 'Viva']);
+	}
+}
+
+class TiposDenunciasTableSeeder extends Seeder {
+    public function run()
+    {
+		DB::table('tipos_denuncias')->insert(['id' => 1, 'nome' => 'Sem médico', 'imagem' => '1.png']);
+		DB::table('tipos_denuncias')->insert(['id' => 2, 'nome' => 'Demora no Atendimento', 'imagem' => '2.png']);
+		DB::table('tipos_denuncias')->insert(['id' => 3, 'nome' => 'Demora na Ambulância', 'imagem' => '3.png']);
+		DB::table('tipos_denuncias')->insert(['id' => 4, 'nome' => 'Hospital sem Estrutura', 'imagem' => '4.png']);
+		DB::table('tipos_denuncias')->insert(['id' => 5, 'nome' => 'Falta de Medicação', 'imagem' => '5.png']);
+		DB::table('tipos_denuncias')->insert(['id' => 6, 'nome' => 'Negligência', 'imagem' => '6.png']);
 	}
 }

@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class TiposController extends Controller {
+class TiposDenunciasController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -14,8 +14,8 @@ class TiposController extends Controller {
 	 */
 	public function index()
 	{
-		$tipos = \App\Tipo::orderBy('nome')->get();
-		return compact('tipos');
+		$tipos = \App\TipoDenuncia::select('id', 'nome', 'imagem')->get();
+		return $tipos;
 	}
 
 	/**

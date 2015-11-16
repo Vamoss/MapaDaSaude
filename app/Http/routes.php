@@ -19,7 +19,7 @@ Route::get('/municipios', 'MunicipiosController@index');
 
 Route::get('/planos', 'PlanosController@index');
 
-Route::get('/tipos', 'TiposController@index');
+Route::get('/tipos_denuncias', 'TiposDenunciasController@index');
 
 Route::get('/estabelecimento', 'EstabelecimentosController@index');
 Route::get('/estabelecimento/query', 'EstabelecimentosController@query');
