@@ -1,4 +1,6 @@
 var SIMULATE_DATA = 0;//2000;//0 = use real data;
+var DEBUG = true;
+
 /*********
 MAP
 **********/
@@ -40,32 +42,6 @@ function initMarkers(){
 		markers.push(marker);
 		oms.addMarker(marker);
 	}
-	/*
-	var markerCluster = new MarkerClusterer(map, markers, {
-		styles: [{
-			url: 'img/group0.png',
-			height: 91,
-			width: 66,
-			anchor: [25, 0],
-			textColor: '#ffffff',
-			textSize: 13
-		}, {
-			url: 'img/group1.png',
-			height: 91,
-			width: 66,
-			anchor: [25, 0],
-			textColor: '#ffffff',
-			textSize: 13
-		}, {
-			url: 'img/group2.png',
-			height: 91,
-			width: 66,
-			anchor: [25, 0],
-			textColor: '#ffffff',
-			textSize: 13
-		}]
-	});
-	*/
 }
 
 var infoWindow;
@@ -122,9 +98,12 @@ var TYPE_LABELS = [
 var data;
 var dataUrl = "/denuncias";
 function loadData(){
-	console.log("data loading: " + dataUrl);
+	if(DEBUG) console.log("data loading: " + dataUrl);
 	$.getJSON(dataUrl, function(json) {
-		console.log("data loaded: " + json);
+		if(DEBUG){
+			console.log("data loaded:");
+			console.log(json);
+		}
 		data = json.data;
 		if(SIMULATE_DATA){
 			for(var i = json.data.length; i< SIMULATE_DATA; i++){
@@ -182,44 +161,104 @@ function initUI() {
 
 		$( event.target ).blur();
 
-		console.log( filterOptions );
+		if(DEBUG) console.log( filterOptions );
 		return false;
 	});
 
+	//typeahead init
+	function searchInString(d) {
+		var test = Bloodhound.tokenizers.whitespace(d);
+		$.each(test,function(k,v){
+			var i = 0;
+			while( (i+1) < v.length ){
+				test.push(v.substr(i,v.length));
+				i++;
+			}
+		});
+		return test;
+	}
+
 	//search estabelecimento
-	var engine = new Bloodhound({
-        remote: {
-	      url: '/estabelecimento/query?estabelecimento=%QUERY',
-	      wildcard: '%QUERY'
-	    },
-	    datumTokenizer: Bloodhound.tokenizers.whitespace,
-        queryTokenizer: Bloodhound.tokenizers.whitespace,
-        limit: 10
-    });
+	var estabelecimentosEngine = new Bloodhound({
+		remote: {
+			url: '/estabelecimento/query?estabelecimento=%QUERY',
+			wildcard: '%QUERY'
+		},
+		datumTokenizer: function(d) {
+			return searchInString(d.estabelecimento);
+		},
+		queryTokenizer: Bloodhound.tokenizers.whitespace,
+		limit: 10
+	});
 
-    engine.initialize();
+	estabelecimentosEngine.initialize();
 
-    $("#local").typeahead({
-        hint: true,
-        highlight: true,
-        minLength: 3,
-        sufficient: 5
+	$("#local").typeahead({
+		hint: true,
+		highlight: true,
+		minLength: 3,
+		sufficient: 5
+	}, {
+		source: estabelecimentosEngine.ttAdapter(),
+		// This will be appended to "tt-dataset-" to form the class name of the suggestion menu.
+		name: 'estabelecimento',
+		// the key from the array we want to display
+		displayKey: 'estabelecimento',
+		templates: {
+			suggestion: function(e) {
+				return '<div>' + e.estabelecimento + '</div>';
+			},
+			empty: [
+				'<div class="empty-message">Não encontramos este estabelecimento</div>'
+			]
+		}
+	});
+
+	//search planos de saúde
+	var planosEngine = new Bloodhound({
+		datumTokenizer: function(d) {
+			return searchInString(d.nome);
+		},
+		queryTokenizer: Bloodhound.tokenizers.whitespace,
+		sufficient : 0,
+		identify: function(obj) { return obj.nome; },
+		prefetch: {
+			url: '/planos/',
+			cache: false
+		}
+	});
+	
+	function planosWithDefaults(q, sync) {
+		if(q === ''){
+			sync(planosEngine.get('Amil','Bradesco','Unimed'));
+		}else{
+			planosEngine.search(q, sync);
+		}
+	}
+
+	$('#plano').typeahead({
+		hint: true,
+		highlight: true,
+		minLength: 0,
+		limit: 10
     }, {
-        source: engine.ttAdapter(),
-        // This will be appended to "tt-dataset-" to form the class name of the suggestion menu.
-        name: 'estabelecimento',
-        // the key from the array we want to display
-        displayKey: 'estabelecimento',
-        templates: {
-            suggestion: function(e) {
-            	console.log(e);
-            	return '<div>' + e.estabelecimento + '</div>';
-            },
-            empty: [
-                '<div class="empty-message">Não encontramos este estabelecimento</div>'
-            ]
-        }
-    });
+		name: 'plano',
+		source: planosWithDefaults,
+		displayKey: 'nome',
+		templates: {
+			suggestion: function(e) {
+				return '<div>' + e.nome + '</div>';
+			},
+			empty: [
+				'<div class="empty-message">Não encontramos este plano de saúde, tente com outras palavras.</div>'
+			]
+		}
+	});
+	$('#plano').on('typeahead:selected', function (e, datum) {
+		if(DEBUG) console.log("selected: ");
+		if(DEBUG) console.log(datum);
+		$('#planoId').val(datum.id);
+	});
 }
 
 /*********

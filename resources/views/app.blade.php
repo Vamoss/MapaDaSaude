@@ -244,33 +244,10 @@
                       </div>
                       <div class="form-group">
                           <label for="plano" class="col-sm-2 control-label">
-                              Plano</label>
+                              Plano de Saúde</label>
                           <div class="col-sm-10">
-                            <input type="radio" name="plano" value="0">All Saúde<br>
-                            <input type="radio" name="plano" value="1">Amil<br>
-                            <input type="radio" name="plano" value="2">Assim<br>
-                            <input type="radio" name="plano" value="3">Bradesco<br>
-                            <input type="radio" name="plano" value="4">Geap<br>
-                            <input type="radio" name="plano" value="5">Golden<br>
-                            <input type="radio" name="plano" value="6">GreenLine<br>
-                            <input type="radio" name="plano" value="7">Hapvida<br>
-                            <input type="radio" name="plano" value="8">Intermédica<br>
-                            <input type="radio" name="plano" value="9">Itálica<br>
-                            <input type="radio" name="plano" value="10">Marítima<br>
-                            <input type="radio" name="plano" value="11">Memorial<br>
-                            <input type="radio" name="plano" value="12">NortreDame<br>
-                            <input type="radio" name="plano" value="13">Cassi<br>
-                            <input type="radio" name="plano" value="14">São Cristóvão<br>
-                            <input type="radio" name="plano" value="15">Plena<br>
-                            <input type="radio" name="plano" value="16">Real<br>
-                            <input type="radio" name="plano" value="17">Santa Amália<br>
-                            <input type="radio" name="plano" value="18">Santa Casa<br>
-                            <input type="radio" name="plano" value="19">Santa Helena<br>
-                            <input type="radio" name="plano" value="20">Medicol<br>
-                            <input type="radio" name="plano" value="21">SulAmérica<br>
-                            <input type="radio" name="plano" value="22">Unimed<br>
-                            <input type="radio" name="plano" value="23">Universal<br>
-                            <input type="radio" name="plano" value="24">Viva
+                            <input type="text" class="form-control" id="plano" placeholder="Digite para buscar ou deixe em vazio" required="" />
+                            <input type="hidden" name="planoId" id="planoId" value="">
                           </div>
                       </div>
                       <div class="row">

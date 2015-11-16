@@ -14,8 +14,8 @@ class PlanosController extends Controller {
 	 */
 	public function index()
 	{
-		$planos = \App\Plano::orderBy('nome')->get();
-		return compact('planos');
+		$planos = \App\Plano::select('id', 'nome')->get();
+		return $planos;
 	}
 
 	/**
