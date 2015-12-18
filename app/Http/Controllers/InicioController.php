@@ -42,7 +42,7 @@ class InicioController extends Controller {
 	public function dados()
 	{
 		$tiposDenuncias = \App\TipoDenuncia::select('id', 'nome', 'imagem')->get();
-		$denuncias = \App\Denuncia::select('tipo', 'co_cnes', 'co_municipio', 'provedor', 'propriedade', 'plano', 'data', 'descricao')->latest('data')->get();
+		$denuncias = \App\Denuncia::select('tipo', 'co_cnes', 'co_municipio', 'provedor', 'propriedade', 'plano', 'data', 'descricao', 'lat', 'lng')->latest('data')->get();
 		return compact('tiposDenuncias', 'denuncias');
 	}
 

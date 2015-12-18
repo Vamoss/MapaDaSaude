@@ -9,7 +9,7 @@ class Denuncia extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['tipo', 'posto', 'municipio', 'titulo', 'descricao', 'provedor', 'unidade', 'data'];
+	protected $fillable = ['tipo', 'posto', 'municipio', 'titulo', 'descricao', 'provedor', 'lat', 'lng', 'unidade', 'data'];
 
 	protected $dates = ['data'];
 	

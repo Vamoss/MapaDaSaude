@@ -14,6 +14,7 @@ class DenunciasController extends Controller {
 	 */
 	public function index()
 	{
+		/*
 		//TODO
 		return '{
 			"data":[
@@ -37,6 +38,7 @@ class DenunciasController extends Controller {
 				}
 			]
 		}';
+		*/
 		$denuncias = \App\Denuncia::latest('data')->get();
 		return compact('denuncias');
 	}

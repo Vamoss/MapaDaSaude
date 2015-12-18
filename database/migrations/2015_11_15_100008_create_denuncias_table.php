@@ -24,6 +24,8 @@ class CreateDenunciasTable extends Migration {
 			$table->integer('plano')->index()->unsigned()->nullable();
 			$table->timestamp('data')->index();
 			$table->text('descricao');
+			$table->double('lat');
+			$table->double('lng');
 			$table->timestamps();
 		});
 

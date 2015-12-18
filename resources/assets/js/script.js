@@ -36,11 +36,9 @@ function initMarkers(){
 		var marker = new google.maps.Marker({
 			map: map,
 			icon: tiposDenunciasImagens[denuncias[i].tipo],
-			//TODO
-			//position: denuncias[i].position,
 			position: {
-				lat:Math.floor(Math.random() * 180 - 90),
-				lng:Math.floor(Math.random() * 360 - 180)
+				lat: denuncias[i].lat,
+				lng: denuncias[i].lng
 			},
 			index: i
 		});
@@ -64,8 +62,16 @@ function showInfo(marker)
 	
 	var contentString = '<div id="infoWindow">'+
 		'<h1><img src="' + tiposDenunciasImagens[denuncias[marker.index].tipo] + '"/> ' + tiposDenuncias[denuncias[marker.index].tipo] + '</h1>'+
-		'<h2>' + denuncias[marker.index].data + '</h2>'+
-		'<p>' + denuncias[marker.index].descricao + '</p>'+
+		'<h2>' + denuncias[marker.index].data + '</h2>';
+		if(denuncias[marker.index].provedor=='SUS'){
+			contentString += '<h3>' + denuncias[marker.index].provedor + '</h3>';
+		}else{
+			//TODO
+			//plano de saude
+			//listar nome 
+			contentString += '<h3>' + denuncias[marker.index].provedor + '</h3>';
+		}
+		contentString += '<p>' + denuncias[marker.index].descricao + '</p>'+
 	'</div>';
 	infoWindow.setContent(contentString);
 	infoWindow.open(map, marker);
@@ -99,10 +105,6 @@ function carregaDados(){
 				for (var attr in copy) {
 					if (copy.hasOwnProperty(attr)) denuncias[i][attr] = copy[attr];
 				}
-				denuncias[i].position = {
-					lat:Math.floor(Math.random() * 180 - 90),
-					lng:Math.floor(Math.random() * 360 - 180)
-				};
 			}
 		}
 		initMarkers();
