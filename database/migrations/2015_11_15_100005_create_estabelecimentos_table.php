@@ -21,13 +21,8 @@ class CreateEstabelecimentosTable extends Migration {
 			$table->string('no_fantasia');
 			$table->bigInteger('nu_cnpj')->unsigned();
 			$table->bigInteger('nu_cpf')->unsigned();
-			$table->date('cnes_dt_atualizacao');
-
-			$table->string('origem_dado');
 			$table->double('lat');
 			$table->double('lng');
-			$table->date('local_dt_atualizacao');
-
 			$table->timestamps();
 		});
 
