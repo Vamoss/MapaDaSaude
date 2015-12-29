@@ -34,7 +34,7 @@ npm install
 Compilando os CSSs e JSs
 
 ```
-gulp
+npm run build
 ```
 
 Inicializando o banco de dados com tabelas e dados

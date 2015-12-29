@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build": "./node_modules/gulp/bin/gulp.js"
+  },
   "private": true,
   "devDependencies": {
     "gulp": "^3.8.8",
