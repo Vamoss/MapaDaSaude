@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "build": "node ./node_modules/gulp/bin/gulp.js",
+    "watch": "npm run build && node ./node_modules/gulp/bin/gulp.js watch",
+    "production": "node ./node_modules/gulp/bin/gulp.js --production"
+  },
   "private": true,
   "devDependencies": {
     "gulp": "^3.8.8",
