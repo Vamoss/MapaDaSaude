@@ -1,0 +1,10 @@
+branch-defaults:
+  deploy:
+    environment: mapadasaude
+global:
+  application_name: mapadasaude
+  default_ec2_keyname: mapadasaude
+  default_platform: 64bit Amazon Linux 2015.09 v2.0.4 running PHP 5.6
+  default_region: us-west-2
+  profile: mapadasaude
+  sc: git

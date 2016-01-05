@@ -2,7 +2,8 @@
   "scripts": {
     "build": "node ./node_modules/gulp/bin/gulp.js",
     "watch": "npm run build && node ./node_modules/gulp/bin/gulp.js watch",
-    "production": "node ./node_modules/gulp/bin/gulp.js --production"
+    "production": "node ./node_modules/gulp/bin/gulp.js --production",
+    "deploy": "git checkout -b deploy && npm run production && git add public/build/ -f && git commit -m \"build\" && eb deploy && git checkout master && git branch -D deploy"
   },
   "private": true,
   "devDependencies": {
