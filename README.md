@@ -49,6 +49,12 @@ Rodando a aplicação
 php artisan serve
 ```
 
+Subindo versão atual para produção
+
+```
+npm run deploy
+```
+
 ## Chega de Descaso
 A definição de onde a ferramenta será publicada ainda está em aberto, apesar de haver a motivação em colaborar com o Movimento Chega de Descaso, projeto iniciado pelo Leandro Farias que perdeu sua esposa após esperar 28 horas por uma cirurgia.
 
