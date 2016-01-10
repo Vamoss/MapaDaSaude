@@ -8,3 +8,6 @@ npm-debug.log
 .DS_Store
 Thumbs.db
 .aws
+
+/public/css/
+/public/js/
