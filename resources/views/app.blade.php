@@ -230,6 +230,9 @@
                               Local</label>
                           <div class="col-sm-10">
                               <input type="text" class="form-control" id="local" placeholder="Local do ocorrido (unidade de saúde)" required="" />
+                              <div id="mapLocal"></div>
+                              <input type="hidden" name="lat" value="" id="lat" />
+                              <input type="hidden" name="lng" value="" id="lng" />
                           </div>
                       </div>
                       <div class="form-group">

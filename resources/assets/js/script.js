@@ -77,6 +77,72 @@ function showInfo(marker)
 	infoWindow.open(map, marker);
 }
 
+/*********
+MAP NO FORMULÁRIO DE DENUNCIA NO CAMPO LOCAL
+**********/
+var draggableMarker;
+var mapLocal;
+function initMapLocal() {
+	if(mapLocal) return;
+
+	mapLocal = new google.maps.Map(document.getElementById('mapLocal'), {
+		streetViewControl: false,
+		mapTypeControl: true,
+		mapTypeControlOptions: {
+	      mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID]
+	    }, // here´s the array of controls
+	    zoom: 17,
+		center: {lat: -15.7213868, lng: -48.078664},
+		//styles: map.getStyle()
+	});
+
+	draggableMarker = new google.maps.Marker({
+		map: mapLocal,
+		draggable: true,
+		animation: google.maps.Animation.DROP,
+		position: {lat: -15.7213868, lng: -48.078664}
+	});
+	draggableMarker.addListener('dragend', onMarkDraggableChanged);
+}
+
+function autoDetectMapLocal() {
+	// Detect user location.
+	// Try HTML5 geolocation.
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			showMapLocal(position.coords.latitude, position.coords.longitude);
+		}, function() {
+			//console.log("não foi possível reconhecer a localização do visitante");
+		});
+	} else {
+		//console.log("não foi possível reconhecer a localização do visitante");
+	}
+}
+
+function showMapLocal(lat, lng) {
+	$('#mapLocal').slideDown("slow", function() {
+		initMapLocal();
+		var pos = {
+			lat: lat,
+			lng: lng
+		};
+
+		draggableMarker.setPosition(pos);
+		mapLocal.setCenter(pos);
+	});
+	setMapLocalValue(lat, lng);
+}
+
+function setMapLocalValue(lat, lng){
+	$("#lat").val(lat);
+	$("#lng").val(lng);
+}
+
+function onMarkDraggableChanged() {
+	var lat = draggableMarker.getPosition().lat();
+	var lng = draggableMarker.getPosition().lng();
+	setMapLocalValue(lat, lng);
+}
 
 /*********
 DATA
@@ -130,6 +196,7 @@ function initUI() {
 	//denuncie
 	$('#denuncie').on('click', function( event ) {
 		$('#denuncieWindow').modal('show');
+		autoDetectMapLocal();
 	});
 	
 	//filters
