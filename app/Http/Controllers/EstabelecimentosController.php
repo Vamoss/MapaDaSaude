@@ -23,9 +23,23 @@ class EstabelecimentosController extends Controller {
 	public function query()
 	{
 		$query = Input::get('estabelecimento');
-        $res   = \App\Municipio::select('co_municipio','nome','uf')->where('nome', 'LIKE', "%$query%")->limit(10)->get();
-        //$res   = \App\Estabelecimento::where('nome', 'LIKE', "%$query%")->get();
-        return Response::json($res);
+		$searchValues = preg_split('/\s+/', $query); // split on 1+ whitespace
+
+		//municipios
+        $municipios   = \App\Municipio::where(function ($q) use ($searchValues) {
+		  foreach ($searchValues as $value) {
+		    $q->where('nome', 'like', "%{$value}%");
+		  }
+		})->limit(4)->get();
+        
+        //estabelecimentos
+		$estabelecimentos = \App\Estabelecimento::where(function ($q) use ($searchValues) {
+		  foreach ($searchValues as $value) {
+		    $q->where('no_fantasia', 'like', "%{$value}%");
+		  }
+		})->join('municipios', 'municipios.co_municipio', '=', 'estabelecimentos.co_municipio')->limit(4)->get();
+
+        return array_merge($estabelecimentos->toArray(), $municipios->toArray());
 	}
 
 	/**

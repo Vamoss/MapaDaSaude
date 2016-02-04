@@ -110,7 +110,7 @@ function autoDetectMapLocal() {
 	// Try HTML5 geolocation.
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
-			showMapLocal(position.coords.latitude, position.coords.longitude);
+			showMapLocal(position.coords.latitude, position.coords.longitude, 17);
 		}, function() {
 			//console.log("não foi possível reconhecer a localização do visitante");
 		});
@@ -119,7 +119,7 @@ function autoDetectMapLocal() {
 	}
 }
 
-function showMapLocal(lat, lng) {
+function showMapLocal(lat, lng, zoom) {
 	$('#mapLocal').slideDown("slow", function() {
 		initMapLocal();
 		var pos = {
@@ -129,8 +129,21 @@ function showMapLocal(lat, lng) {
 
 		draggableMarker.setPosition(pos);
 		mapLocal.setCenter(pos);
+		mapLocal.setZoom(zoom);
 	});
 	setMapLocalValue(lat, lng);
+}
+
+var geocoder = new google.maps.Geocoder();
+function findMapLocalByName(name) {
+  geocoder.geocode({'address': name}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+    	if(DEBUG) console.log(results[0].geometry.location);
+      	showMapLocal(results[0].geometry.location.lat(), results[0].geometry.location.lng(), 12);
+    } else {
+      	if(DEBUG) console.log('Geocode was not successful for the following reason: ' + status);
+    }
+  });
 }
 
 function setMapLocalValue(lat, lng){
@@ -240,10 +253,11 @@ function initUI() {
 			wildcard: '%QUERY'
 		},
 		datumTokenizer: function(d) {
-			return searchInString(d.nome);
+			if(d.no_fantasia) return searchInString(d.no_fantasia);
+			else return searchInString(d.nome);
 		},
 		queryTokenizer: Bloodhound.tokenizers.whitespace,
-		limit: 10
+		limit: 99999
 	});
 
 	estabelecimentosEngine.initialize();
@@ -258,15 +272,25 @@ function initUI() {
 		// This will be appended to "tt-dataset-" to form the class name of the suggestion menu.
 		name: 'estabelecimento',
 		// the key from the array we want to display
-		displayKey: 'estabelecimento',
+		display: function(e){
+			if(e.no_fantasia) return toTitleCase(e.no_fantasia);
+			else return toTitleCase(e.nome);
+		},
 		templates: {
 			suggestion: function(e) {
-				return '<div>' + e.nome + '</div>';
+				if(e.no_fantasia) return '<div>' + toTitleCase(e.no_fantasia) + " (" + toTitleCase(e.nome) + "-" + e.uf + ")" + '</div>';
+				else return '<div>' + toTitleCase(e.nome) + " - " + e.uf + '</div>';
 			},
 			empty: [
 				'<div class="empty-message">Não encontramos este estabelecimento</div>'
 			]
 		}
+	});
+	$('#local').on('typeahead:selected', function (e, datum) {
+		if(DEBUG) console.log("selected: ");
+		if(DEBUG) console.log(datum);
+		if(datum.no_fantasia) showMapLocal(datum.lat, datum.lng, 17);
+		else findMapLocalByName(datum.nome, datum.uf);
 	});
 
 	//search planos de saúde
@@ -314,6 +338,11 @@ function initUI() {
 		if(DEBUG) console.log(datum);
 		$('#planoId').val(datum.id);
 	});
+}
+
+function toTitleCase(str)
+{
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 }
 
 /*********
