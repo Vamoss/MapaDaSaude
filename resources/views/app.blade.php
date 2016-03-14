@@ -59,15 +59,15 @@
             <div class="janeladafroralinda" id='question-1'>
               <div class='header'> <label class="pergunta">O que você quer denunciar?</label>
               </div>
-                <a href='javascript:;' class='question-2'>Demora no atendimento</a>
-                <a href='javascript:;' class='question-3'>Ausência de médico</a>
-                <a href='javascript:;' class='question-4'>Plano de Saúde</a>
+                <a href='javascript:;' class='question-2' id='resposta'>Demora no atendimento</a><br>
+                <a href='javascript:;' class='question-3' id='resposta'>Ausência de médico</a><br>
+                <a href='javascript:;' class='question-4' id='resposta'>Plano de Saúde</a>
               </div>
                       <div class='janeladafroralinda' id='question-2'>
                         <div class='header'> <label class='head'>Demora no Atendimento</label>
                         </div>
                           <label class='pergunta'>Por quanto tempo você esperou?</label>
-                          <p> blablabla</p>
+                          <p class='resposta'> blablabla</p>
                           <a href='javascript:;' class='button-back'>x</a>
                           <a href='javascript:;' class='button-next'>></a>
                         </div>

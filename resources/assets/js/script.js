@@ -235,12 +235,13 @@ function initUI() {
     });
 
     $('a.button-back').click(function() {
-        $("#question-2").addClass("hide");
-        $("#question-3").addClass("hide");
-        $("#question-4").addClass("hide");
+        $("#question-2").removeClass("show");
         $("#question-21").removeClass("show");
         $('#question-22').removeClass('show');
+        $("#question-3").removeClass("show");
         $('#question-31').removeClass('show');
+        $("#question-4").removeClass("show");
+        $('#question-41').removeClass('show');
         $('#obrigado').removeClass('show');
         $('#question-1').addClass('show');
     });
