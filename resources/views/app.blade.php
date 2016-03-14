@@ -76,6 +76,16 @@
                           <div class='header'> <label class='head'>Demora no atendimento</label> </div>
                           <label class='pergunta'>Onde você foi atendido?</label>
                           <p>campo de texto</p>
+                          <a href='javascript:;' class='button-back'>x</a>
+                          <a href='javascript:;' class='button-next'>></a>
+                        </div>
+
+                        <div class='janeladafroralinda' id='question-22'>
+                          <div class='header'> <label class='head'>Demora no atendimento</label> </div>
+                          <label class='pergunta'>Você tem plano de saúde?</label>
+                          <p>texto</p>
+                          <a href='javascript:;' class='button-back'>x</a>
+                          <a href='javascript:;' class='button-next'>></a>
                         </div>
 
                         <div class='janeladafroralinda' id='question-3'>
@@ -83,15 +93,42 @@
                             </div>
                               <label class='pergunta'>Que tipo de médico?</label>
                               <p>texto</p>
+                              <a href='javascript:;' class='button-back'>x</a>
+                              <a href='javascript:;' class='button-next'>></a>
                             </div>
+
+                        <div class='janeladafroralinda' id='question-31'>
+                          <div class='header'> <label class='head'>Ausência de médico</label> </div>
+                          <label class='pergunta'>Que tipo de médico?</label>
+                          <p>campo de texto</p>
+                          <a href='javascript:;' class='button-back'>x</a>
+                          <a href='javascript:;' class='button-next'>></a>
+                        </div>
 
                         <div class='janeladafroralinda' id='question-4'>
                           <div class='header'> <label class='head'>Plano de Saúde</label></div>
                               <label class='pergunta'>Qual foi o problema?</label>
                               <p>texto</p>
+                          <a href='javascript:;' class='button-back'>x</a>
+                          <a href='javascript:;' class='button-next'>></a>
                             </div>
 
+                        <div class='janeladafroralinda' id='question-41'>
+                          <div class='header'> <label class='head'>Plano de Saúde</label> </div>
+                          <label class='pergunta'>Qual o seu plano de saúde?</label>
+                          <p>campo de texto</p>
+                          <a href='javascript:;' class='button-back'>x</a>
+                          <a href='javascript:;' class='button-next'>></a>
+                        </div>
 
+                        <div class='janeladafroralinda' id='obrigado'>
+                          <div class='header'></div>
+                          <label class='pergunta'>Obrigado.</label>
+                          <h1>Você é mais que uma estatística.</h1>
+                          <p>Conte sua história. Complete sua denúncia com mais detalhes:</p>
+                          <p>Campo de texto</p>
+                          <a href='javascript:;' class='button-back'>x</a>
+                        </div>
 
                       <div class="row">
                         <button type="submit" class="btn btn-primary btn-lg col-md-offset-2">Denunciar</button>
