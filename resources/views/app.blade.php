@@ -15,56 +15,15 @@
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Menu</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand" href="#">Mapa da Saúde</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
             <form class="navbar-form navbar-right" role="search">
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search">
               </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>
+           </form>
+          </div>
             <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Filtro 1 <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>
-                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>
-                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>
-                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>
-                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>
-                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Filtro 2 <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>
-                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>
-                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>
-                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>
-                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>
-                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Filtro 3 <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 1</a></li>
-                  <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>
-                  <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>
-                  <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>
-                  <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>
-                  <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>
-                </ul>
-              </li>
               <li><a id="loginButton" href="#">Login</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -75,19 +34,6 @@
       <!-- content begin -->
       <div class="row">
 
-        <!--sidebar begin-->
-        <div class="col-sm-4 col-md-3 sidebar">
-          
-          <div class="row">
-            <h2>Lorem ipsum dolor</h2>
-            sit amet, consectetur adipiscing elit. Suspendisse quis felis vitae mauris pulvinar dignissim hendrerit quis risus. Fusce in urna eu justo consectetur suscipit. Pellentesque sagittis vel metus in dictum. Sed quis mauris tempus, finibus lectus at, laoreet orci. <br/><br/>
-          </div><!--/row-->
-          <button type="button" class="btn btn-success btn-lg center-block" id="denuncie" aria-label="Left Align">
-           <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Faça uma denúncia
-          </button>
-        </div>
-        <!--sidebar end-->
-
         @yield('content')
 
         <!--map begin-->
@@ -97,6 +43,69 @@
         </div>
         <!--map end-->
         
+                <!--sidebar begin-->
+        <div class="col-sm-4 col-md-3 sidebar">
+          <!--/row-->
+
+
+
+
+          <!--/as coisas que a frora fez-->
+           
+
+            <button id="botao" type="submit"><h2>Faça sua denúncia</h2></button>
+             
+
+            <div class="janeladafroralinda" id='question-1'>
+              <div class='header'> <label class="pergunta">O que você quer denunciar?</label>
+              </div>
+                <a href='javascript:;' class='question-2'>Demora no atendimento</a>
+                <a href='javascript:;' class='question-3'>Ausência de médico</a>
+                <a href='javascript:;' class='question-4'>Plano de Saúde</a>
+              </div>
+                      <div class='janeladafroralinda' id='question-2'>
+                        <div class='header'> <label class='head'>Demora no Atendimento</label>
+                        </div>
+                          <label class='pergunta'>Por quanto tempo você esperou?</label>
+                          <p> blablabla</p>
+                          <a href='javascript:;' class='button-back'>x</a>
+                          <a href='javascript:;' class='button-next'>></a>
+                        </div>
+
+                        <div class='janeladafroralinda' id='question-21'>
+                          <div class='header'> <label class='head'>Demora no atendimento</label> </div>
+                          <label class='pergunta'>Onde você foi atendido?</label>
+                          <p>campo de texto</p>
+                        </div>
+
+                        <div class='janeladafroralinda' id='question-3'>
+                          <div class='header'> <label class='head'>Ausência de médico</label>
+                            </div>
+                              <label class='pergunta'>Que tipo de médico?</label>
+                              <p>texto</p>
+                            </div>
+
+                        <div class='janeladafroralinda' id='question-4'>
+                          <div class='header'> <label class='head'>Plano de Saúde</label></div>
+                              <label class='pergunta'>Qual foi o problema?</label>
+                              <p>texto</p>
+                            </div>
+
+
+
+                      <div class="row">
+                        <button type="submit" class="btn btn-primary btn-lg col-md-offset-2">Denunciar</button>
+                      </div>
+                      </form>
+           
+
+           <!--ebaaa-->
+
+
+
+        </div>
+        <!--sidebar end-->
+
         <!--loginWindow begin-->
         <div id="loginWindow" class="modal fade" role="dialog">
           <div class="modal-dialog modal-lg">

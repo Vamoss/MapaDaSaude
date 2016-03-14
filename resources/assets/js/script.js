@@ -1,7 +1,7 @@
 var SIMULATE_DATA = 0;//2000;//0 = use real data;
 var DEBUG = true;
 
-/*********
+/**********
 MAP
 **********/
 var map;
@@ -206,11 +206,41 @@ function initUI() {
 		$('#loginWindow').modal('show');
 	});
 
-	//denuncie
-	$('#denuncie').on('click', function( event ) {
-		$('#denuncieWindow').modal('show');
-		autoDetectMapLocal();
+/************************************************************************/
+	//frora
+	$('#botao').click (function( event ) {
+		$('.janeladafroralinda').toggle();
 	});
+
+    $('a.question-2').click(function() {
+        $("#question-2").addClass("show");
+        $('#question-1').addClass('hide');
+    });
+
+    $('a.question-3').click(function() {
+        $("#question-3").addClass("show");
+        $('#question-1').addClass('hide');
+    });
+
+    $('a.question-4').click(function() {
+        $("#question-4").addClass("show");
+        $('#question-1').addClass('hide');
+    });
+
+    $('a.button-back').click(function() {
+        $("#question-2").addClass("hide");
+        $("#question-3").addClass("hide");
+        $("#question-4").addClass("hide");
+        $("#question-21").addClass("hide");
+        $('#question-1').addClass('show');
+    });
+
+    $('a.button-next').click(function() {
+        $("#question-2").addClass("hide");
+        $('#question-21').addClass('show');
+        $('question-1').addClass('hide');
+    });
+/***********************************************************************/
 	
 	//filters
 	$( '.dropdown-menu a' ).on( 'click', function( event ) {
