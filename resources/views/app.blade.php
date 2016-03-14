@@ -129,10 +129,6 @@
                           <p>Campo de texto</p>
                           <a href='javascript:;' class='button-back'>x</a>
                         </div>
-
-                      <div class="row">
-                        <button type="submit" class="btn btn-primary btn-lg col-md-offset-2">Denunciar</button>
-                      </div>
                       </form>
            
 

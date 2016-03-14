@@ -6485,7 +6485,8 @@ body {
 .pergunta {
   font-size: 20px;
   font: sans-serif;
-  padding: 10px;
+  margin: auto;
+  text-align: center;
 }
 .head {
   font-size: 14px;
@@ -6494,6 +6495,9 @@ body {
   color: white;
 }
 #obrigado {
+  display: none;
+}
+#question-1 {
   display: none;
 }
 #question-2 {

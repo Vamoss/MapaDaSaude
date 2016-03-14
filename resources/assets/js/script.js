@@ -209,7 +209,14 @@ function initUI() {
 /************************************************************************/
 	//frora
 	$('#botao').click (function( event ) {
-		$('.janeladafroralinda').toggle();
+		$('#question-1').addClass('show');
+		$("#question-2").removeClass("show");
+        $("#question-3").removeClass("show");
+        $("#question-4").removeClass("show");
+        $("#question-21").removeClass("show");
+        $('#question-22').removeClass('show');
+        $('#question-31').removeClass('show');
+        $('#obrigado').removeClass('show');
 	});
 
     $('a.question-2').click(function() {
