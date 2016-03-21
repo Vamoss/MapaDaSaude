@@ -32,7 +32,6 @@
   &:extend(.clearfix all);
 
   @media (min-width: @grid-float-breakpoint) {
-    float: left;
   }
 }
 
@@ -67,7 +66,6 @@
     box-shadow: none;
 
     &.collapse {
-      display: block !important;
       visibility: visible !important;
       height: auto !important;
       padding-bottom: 0; // Override default setting
@@ -180,7 +178,6 @@
   @media (min-width: @grid-float-breakpoint) {
     .navbar > .container &,
     .navbar > .container-fluid & {
-      margin-left: -@navbar-padding-horizontal;
     }
   }
 }
@@ -376,7 +373,6 @@ float: right;
   .navbar-left  { .pull-left(); }
   .navbar-right {
     .pull-right();
-    margin-right: -@navbar-padding-horizontal;
 
     ~ .navbar-right {
       margin-right: 0;

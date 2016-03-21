@@ -203,7 +203,22 @@ function initUI() {
 
 	//login
 	$('#loginButton').on('click', function( event ) {
-		$('#loginWindow').modal('show');
+		$('#loginWindow').toggle('show').removeClass('hide');
+		$('#botao').toggle('show');
+		$('#janeladafroralinda').toggle('hide');
+		$('.col-md-9').css('width', '50%');
+		$('#question-1').addClass('hide').removeClass('show');
+		$("#question-2").removeClass("show");
+        $("#question-3").removeClass("show");
+        $("#question-4").removeClass("show");
+        $("#question-21").removeClass("show");
+        $('#question-22').removeClass('show');
+        $('#question-41').removeClass('show');
+        $('#obrigado').removeClass('show');
+	});
+
+	$('button.entrar').click (function ( event ) {
+		$('.nome').addClass('hide');
 	});
 
 /************************************************************************/
@@ -215,83 +230,100 @@ function initUI() {
         $("#question-4").removeClass("show");
         $("#question-21").removeClass("show");
         $('#question-22').removeClass('show');
-        $('#question-31').removeClass('show');
+        $('#question-41').removeClass('show');
         $('#obrigado').removeClass('show');
-	});
+		$('.map').css('width', '20%');
+		$('#botao').addClass('hide').removeClass('show');
+ 	});
 
-    $('a.question-2').click(function() {
+    $('button.question-2').click(function() {
         $("#question-2").addClass("show");
         $('#question-1').removeClass('show').addClass('hide');
     });
 
-    $('a.question-3').click(function() {
+    $('button.question-3').click(function() {
         $("#question-3").addClass("show");
         $('#question-1').removeClass('show').addClass('hide');
     });
 
-    $('a.question-4').click(function() {
+    $('button.question-4').click(function() {
         $("#question-4").addClass("show");
         $('#question-1').removeClass('show').addClass('hide');
     });
 
-    $('a.button-back').click(function() {
+    $('button.button-back').click(function() {
         $("#question-2").removeClass("show");
         $("#question-21").removeClass("show");
         $('#question-22').removeClass('show');
         $("#question-3").removeClass("show");
-        $('#question-31').removeClass('show');
         $("#question-4").removeClass("show");
         $('#question-41').removeClass('show');
         $('#obrigado').removeClass('show');
         $('#question-1').addClass('show');
     });
 
-    $('#question-2 a.button-next').click(function() {
-        $("#question-2").removeClass("show");
-        $('#question-21').addClass('show');
-        $('question-1').removeClass('show');
+    $('#loginWindow .button-back').click(function() {
+    	$('#loginWindow').removeClass('show').addClass('hide');
+    	$('#botao').removeClass('hide').addClass('show');
+    	$('#question-1').removeClass('show');
     });
 
-    $('#question-21 a.button-next').click(function() {
+    $('#loginWindow .button-next').click(function() {
+		$('#botao').addClass('show');
+		$('#loginWindow').removeClass('show').addClass('hide');
+	});
+
+    $('#question-2 button.button-next').click(function() {
+        $("#question-2").removeClass("show");
+        $('#question-21').addClass('show');
+        $('#question-1').removeClass('show');
+    });
+
+    $('#question-21 button.button-next').click(function() {
         $("#question-2").removeClass("show");
         $('#question-21').removeClass('show');
         $('#question-22').addClass('show');
-        $('question-1').removeClass('show');
+        $('#question-1').removeClass('show');
     });
 
-    $('#question-22 a.button-next').click(function() {
+    $('#question-22 button.button-next').click(function() {
         $("#question-2").removeClass("show");
         $('#question-21').removeClass('show');
         $('#question-22').removeClass('show');
         $('#obrigado').addClass('show');
-        $('question-1').removeClass('show');
+        $('#question-1').removeClass('show');
     });
 
-    $('#question-3 a.button-next').click(function() {
+    $('#question-3 button.button-next').click(function() {
         $("#question-3").removeClass("show");
-        $('#question-31').addClass('show');
-        $('question-1').removeClass('show');
-    });
-
-    $('#question-31 a.button-next').click(function() {
-        $("#question-3").removeClass("show");
-        $('#question-31').removeClass('show');
         $('#obrigado').addClass('show');
-        $('question-1').removeClass('show');
+        $('#question-1').removeClass('show');
     });
 
-    $('#question-4 a.button-next').click(function() {
+    $('#question-4 button.button-next').click(function() {
         $("#question-4").removeClass("show");
         $('#question-41').addClass('show');
-        $('question-1').removeClass('show');
+        $('#question-1').removeClass('show');
     });
 
-    $('#question-41 a.button-next').click(function() {
+    $('#question-41 button.button-next').click(function() {
         $("#question-4").removeClass("show");
         $('#question-41').removeClass('show');
         $('#obrigado').addClass('show');
-        $('question-1').removeClass('show');
+        $('#question-1').removeClass('show');
     });
+
+    $("button.yes").click(function(){
+    	$("#qual").addClass('show');
+		$(".yes").css('background-color','black');
+		$(".no").css('background-color','#cccccc');
+	});
+
+	$('button.no').click(function(){
+		$('#qual').removeClass('show');
+		$('.no').css('background-color','black');
+		$('.yes').css('background-color','#cccccc')
+	});
 /***********************************************************************/
 	
 	//filters
