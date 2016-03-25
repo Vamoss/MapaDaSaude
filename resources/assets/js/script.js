@@ -206,7 +206,7 @@ function initUI() {
 		$('#loginWindow').toggle('show').removeClass('hide');
 		$('#botao').toggle('show');
 		$('#janeladafroralinda').toggle('hide');
-		$('.col-md-9').css('width', '50%');
+		$('.col-md-9').removeClass('smaller');
 		$('#question-1').addClass('hide').removeClass('show');
 		$("#question-2").removeClass("show");
         $("#question-3").removeClass("show");
@@ -215,6 +215,7 @@ function initUI() {
         $('#question-22').removeClass('show');
         $('#question-41').removeClass('show');
         $('#obrigado').removeClass('show');
+        $('.sidebar').removeClass('bigger');
 	});
 
 	$('button.entrar').click (function ( event ) {
@@ -232,7 +233,8 @@ function initUI() {
         $('#question-22').removeClass('show');
         $('#question-41').removeClass('show');
         $('#obrigado').removeClass('show');
-		$('.map').css('width', '20%');
+		$('.map').addClass('smaller');
+		$('.col-sm-4').addClass('bigger');
 		$('#botao').addClass('hide').removeClass('show');
  	});
 

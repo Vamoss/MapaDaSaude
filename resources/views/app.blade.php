@@ -24,7 +24,7 @@
            </form>
           </div>
             <ul class="nav navbar-nav navbar-right">
-              <li><a id="loginButton" href="#">Login</a></li>
+              <li><a id="loginButton" href="#">ENTRAR</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -57,11 +57,11 @@
              
 
             <div class="janeladafroralinda" id='question-1'>
-              <label class="pergunta">O que você quer denunciar?</label>
-                <button class='question-2 resposta' >Demora no atendimento</button><br>
-                <button class='question-3 resposta' >Ausência de médico</button><br>
-                <button class='question-4 resposta' >Plano de Saúde</button>
-                <button class='question-5 resposta' >Demora na Ambulância</button>
+              <label class="pergunta">O que você quer <br>denunciar?</label>
+                <button class='question-2 resposta demora' >Demora no atendimento</button><br>
+                <button class='question-3 resposta medico' >Ausência de médico</button><br>
+                <button class='question-4 resposta plano' >Plano de Saúde</button>
+                <button class='question-5 resposta ambulancia' >Demora na Ambulância</button>
                 <button class='question-6 resposta' >Outro</button>
                 <button class='question-7 resposta' >Mais um</button>
                 <button class='question-8 resposta' >Outro</button>
@@ -72,73 +72,88 @@
                 <button class='question-13 resposta' >Mais um</button>
               </div>
                       <div class='janeladafroralinda' id='question-2'>
-                        <div class='header'> <label class='head'>Demora no Atendimento</label>
-                        </div>
                           <label class='pergunta'>Por quanto tempo você esperou?</label>
                           <p class='resposta'> blablabla</p>
+                          <div class="footer">
                           <button class='button-back' target='_blank'></button>
                           <button class='button-next' target='_blank'></button>
                         </div>
-
-                        <div class='janeladafroralinda' id='question-21'>
-                          <div class='header'> <label class='head'>Demora no atendimento</label> </div>
-                          <label class='pergunta'>Onde você foi atendido?</label>
-                          <div class="form-group">
-                            <input type="text" class="complete">
-                          </div>
-                          <button class='button-back' target='_blank'></button>
-                          <button class='button-next' target='_blank'></button>
-                        </div>
-
-                        <div class='janeladafroralinda' id='question-22'>
-                          <div class='header'> <label class='head'>Demora no atendimento</label> </div>
-                          <label class='pergunta'>Você tem plano de saúde?</label>
-                            <button class='yes'>SIM</button>
-                            <button class='no'>NÃO</button>
-                            <div id='qual'>
-                              <label class='pergunta'>Qual?</label>
-                              <div class="form-group">
-                                <input type="text" class="complete">
-                              </div>
-                            </div> 
-                          <button class='button-back' target='_blank'></button>
-                          <button class='button-next' target='_blank'></button>
                         </div>
 
                         <div class='janeladafroralinda' id='question-3'>
-                          <div class='header'> <label class='head'>Ausência de médico</label>
-                            </div>
                               <label class='pergunta'>Que tipo de médico?</label>
                           <div class="form-group">
                             <input type="text" class="complete">
                           </div>                              
-                              <button class='button-back' target='_blank'></button>
-                              <button class='button-next' target='_blank'></button>
+                          <div class="footer">
+                          <button class='button-back' target='_blank'></button>
+                          <button class='button-next' target='_blank'></button>
+                        </div>
                             </div>
 
                         <div class='janeladafroralinda' id='question-4'>
-                          <div class='header'> <label class='head'>Plano de Saúde</label></div>
                               <label class='pergunta'>Qual foi o problema?</label>
                               <h1>Selecione um ou mais:</h1>
                                 <input type="radio" value="autorizacao" checked> AUTORIZAÇÃO DE PROCEDIMENTO<br>
                                 <input type="radio" value="negligencia"> NEGLIGÊNCIA<br>
                                 <input type="radio" value="impericia"> IMPERÍCIA
+                          <div class="footer">
                           <button class='button-back' target='_blank'></button>
                           <button class='button-next' target='_blank'></button>
+                        </div>
+                            </div>
+
+                        <div class='janeladafroralinda' id='question-21'>
+                          <label class='pergunta'>Onde você foi atendido?</label>
+                          <div class="form-group">
+                            <input type="text" class="complete">
+                          </div>
+                          <div class="footer">
+                          <button class='button-back' target='_blank'></button>
+                          <button class='button-next' target='_blank'></button>
+                        </div>
+                        </div>
+
+                        <div class='janeladafroralinda' id='question-22'>
+                          <label class='pergunta'>Você tem plano de saúde?</label>
+                            <button class='yes'>SIM</button>
+                            <button class='no'>NÃO</button>
+                            <div id='qual'>
+                              <label class='qual'>Qual?</label>
+                              <div class="form-group">
+                                <input type="text" class="complete">
+                              </div>
+                            </div> 
+                          <div class="footer">
+                          <button class='button-back' target='_blank'></button>
+                          <button class='button-next' target='_blank'></button>
+                        </div>
+                        </div>
+
+                        <div class='janeladafroralinda' id='question-4'>
+                              <label class='pergunta'>Qual foi o problema?</label>
+                              <h1>Selecione um ou mais:</h1>
+                                <input type="radio" value="autorizacao" checked> AUTORIZAÇÃO DE PROCEDIMENTO<br>
+                                <input type="radio" value="negligencia"> NEGLIGÊNCIA<br>
+                                <input type="radio" value="impericia"> IMPERÍCIA
+                          <div class="footer">
+                          <button class='button-back' target='_blank'></button>
+                          <button class='button-next' target='_blank'></button>
+                        </div>
                             </div>
 
                         <div class='janeladafroralinda' id='question-41'>
-                          <div class='header'> <label class='head'>Plano de Saúde</label> </div>
                           <label class='pergunta'>Qual o seu plano de saúde?</label>
                           <div class="form-group">
                             <input type="text" class="complete">
                           </div>
+                          <div class="footer">
                           <button class='button-back' target='_blank'></button>
                           <button class='button-next' target='_blank'></button>
                         </div>
+                        </div>
 
                         <div class='janeladafroralinda' id='obrigado'>
-                          <div class='header'></div>
                           <label class='pergunta'>Obrigado.</label>
                           <h1>Você é mais que uma estatística.</h1>
                           <p>Conte sua história. Complete sua denúncia com mais detalhes:</p>
@@ -146,20 +161,24 @@
                             <div class="triangulo"></div>
                             <textarea id="texto"rows="5" cols="50"></textarea>
                             </div>
-                          <button class='button-back' target='_blank'></a>
+                          <div class="footer">
+                          <button class='button-back' target='_blank'></button>
+                        </div>
                         </div>
                       </form>
            <div id="loginWindow" class="janeladafroralinda">
             <label class="pergunta">Nome e cadastro </label>
             <p>Não divulgaremos seus dados para ninguém.</p>
               <div class="form-group">
-                <button class="entrar">Já fez uma denúcia antes?<label class='entre'>ENTRAR</label></button>
+                <button class="entrar">JÁ FEZ UMA DENÚNCIA ANTES?<label class='entre'>ENTRAR</label></button>
               </div>    
                 <input type="text" class='complete nome' placeholder="Seu nome">  
                 <input type="text" class='complete' placeholder="Seu e-mail">
                 <input type="text" class='complete' placeholder="Sua senha"> 
-                <button class='button-back' target='_blank'></button>
-                <button class='button-next' target='_blank'></button>       
+                  <div class="footer">
+                    <button class='button-back' target='_blank'></button>
+                    <button class='button-next' target='_blank'></button>
+                  </div>     
            <!--ebaaa-->
 
 
