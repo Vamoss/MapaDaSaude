@@ -816,8 +816,28 @@ function initUI() {
         $('#obrigado').removeClass('show');
 		$('.map').addClass('smaller');
 		$('.col-sm-4').addClass('bigger');
-		$('#botao').addClass('hide').removeClass('show');
+		$('.denunciar').addClass('hide').removeClass('show');
  	});
+
+ 	var current=0;
+ 	var pages = ["#question-2", "#question-21", "#question-22", "#obrigado"];
+
+ 	var changePage = function () {
+		if (current<pages.length){
+ 			console.log(pages[current], current, $(this).attr('class')); // debug
+ 			$(pages[current]).removeClass('show'); // actions da pergunta enviada
+ 			current++; // muda current pra próximo item do array // 
+ 			$(pages[current]).addClass('show'); // set up da nova pergunta
+ 		}
+ 		else {
+ 			current=0;
+ 		};
+ 	};
+
+
+ 	$('.button-next').click(changePage);
+
+
 
     $('button.question-2').click(function() {
         $("#question-2").addClass("show");
@@ -845,67 +865,46 @@ function initUI() {
         $('#question-1').addClass('show');
     });
 
-    $('#loginWindow .button-back').click(function() {
-    	$('#loginWindow').removeClass('show').addClass('hide');
-    	$('#botao').removeClass('hide').addClass('show');
-    	$('#question-1').removeClass('show');
-    });
+ //    $('#loginWindow .button-back').click(function() {
+ //    	$('#loginWindow').removeClass('show').addClass('hide');
+ //    	$('#botao').removeClass('hide').addClass('show');
+ //    	$('#question-1').removeClass('show');
+ //    });
 
-    $('#loginWindow .button-next').click(function() {
-		$('#botao').addClass('show');
-		$('#loginWindow').removeClass('show').addClass('hide');
-	});
+ //    $('#loginWindow .button-next').click(function() {
+	// 	$('#botao').addClass('show');
+	// 	$('#loginWindow').removeClass('show').addClass('hide');
+	// }); 
 
-    $('#question-2 button.button-next').click(function() {
-        $("#question-2").removeClass("show");
-        $('#question-21').addClass('show');
-        $('#question-1').removeClass('show');
-    });
+ //    $('#question-3 button.button-next').click(function() {
+ //        $("#question-3").removeClass("show");
+ //        $('#obrigado').addClass('show');
+ //        $('#question-1').removeClass('show');
+ //    });
 
-    $('#question-21 button.button-next').click(function() {
-        $("#question-2").removeClass("show");
-        $('#question-21').removeClass('show');
-        $('#question-22').addClass('show');
-        $('#question-1').removeClass('show');
-    });
+ //    $('#question-4 button.button-next').click(function() {
+ //        $("#question-4").removeClass("show");
+ //        $('#question-41').addClass('show');
+ //        $('#question-1').removeClass('show');
+ //    });
 
-    $('#question-22 button.button-next').click(function() {
-        $("#question-2").removeClass("show");
-        $('#question-21').removeClass('show');
-        $('#question-22').removeClass('show');
-        $('#obrigado').addClass('show');
-        $('#question-1').removeClass('show');
-    });
-
-    $('#question-3 button.button-next').click(function() {
-        $("#question-3").removeClass("show");
-        $('#obrigado').addClass('show');
-        $('#question-1').removeClass('show');
-    });
-
-    $('#question-4 button.button-next').click(function() {
-        $("#question-4").removeClass("show");
-        $('#question-41').addClass('show');
-        $('#question-1').removeClass('show');
-    });
-
-    $('#question-41 button.button-next').click(function() {
-        $("#question-4").removeClass("show");
-        $('#question-41').removeClass('show');
-        $('#obrigado').addClass('show');
-        $('#question-1').removeClass('show');
-    });
+ //    $('#question-41 button.button-next').click(function() {
+ //        $("#question-4").removeClass("show");
+ //        $('#question-41').removeClass('show');
+ //        $('#obrigado').addClass('show');
+ //        $('#question-1').removeClass('show');
+ //    });
 
     $("button.yes").click(function(){
     	$("#qual").addClass('show');
-		$(".yes").css('background-color','black');
-		$(".no").css('background-color','#cccccc');
+		$(".yes").addClass('selected');
+		$(".no").removeClass('selected');
 	});
 
 	$('button.no').click(function(){
 		$('#qual').removeClass('show');
-		$('.no').css('background-color','black');
-		$('.yes').css('background-color','#cccccc')
+		$('.no').addClass('selected');
+		$('.yes').removeClass('selected');
 	});
 /***********************************************************************/
 	

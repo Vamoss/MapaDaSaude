@@ -2,8 +2,7 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="486px" height="487.141px" viewBox="174.444 0 486 487.141" enable-background="new 174.444 0 486 487.141"
-	 xml:space="preserve">
+	 width="93px" height="99px" viewBox="197.5 196.07 93 99" enable-background="new 197.5 196.07 93 99" xml:space="preserve">
 <g display="none">
 	<rect x="-731.518" display="inline" width="881.016" height="471.463"/>
 	<rect x="182.832" y="-171.441" display="inline" width="476.225" height="142.867"/>
@@ -47,7 +46,7 @@
 	<text transform="matrix(1 0 0 1 -55.2812 286.3555)" display="inline" font-family="'Helvetica-Bold'" font-size="14.2867">Save as</text>
 	<text transform="matrix(1 0 0 1 -55.2812 310.1641)" display="inline" font-family="'Helvetica'" font-size="11.4294">Save as .SVG and make sure “Use </text>
 	<text transform="matrix(1 0 0 1 -55.2812 324.4531)" display="inline" font-family="'Helvetica'" font-size="11.4294">Artboards” is checked</text>
-	<text transform="matrix(1.0074 0 0 1 -415.0234 145.6914)" display="inline" font-family="'Helvetica'" font-size="12.2537">100px</text>
+	<text transform="matrix(1.0074 0 0 1 -415.0239 145.6914)" display="inline" font-family="'Helvetica'" font-size="12.2537">100px</text>
 	<text transform="matrix(1.0074 0 0 1 -12.4141 185.7266)" display="inline" font-family="'Helvetica-Bold'" font-size="24.5075">.SVG</text>
 	<rect x="-419.658" y="165.798" display="inline" width="48.865" height="48.503"/>
 	<rect x="-419.481" y="151.277" display="inline" width="2.485" height="11.13"/>
@@ -57,23 +56,20 @@
 		<rect x="-216.267" y="161.174" width="49.075" height="48.365"/>
 		<rect x="-182.95" y="136.71" width="15.753" height="15.529"/>
 	</g>
-	<rect x="-667.227" y="107.15" display="inline" stroke="#FFFFFF" stroke-miterlimit="10" width="142.867" height="142.867"/>
-	<rect x="-467.214" y="107.15" display="inline" stroke="#FFFFFF" stroke-miterlimit="10" width="142.867" height="142.867"/>
-	<rect x="-262.437" y="107.15" display="inline" stroke="#FFFFFF" stroke-miterlimit="10" width="142.867" height="142.867"/>
-	<rect x="-52.898" y="107.15" display="inline" stroke="#FFFFFF" stroke-miterlimit="10" width="142.867" height="142.867"/>
+	<rect x="-667.227" y="107.15" display="inline" stroke="#FFFFFF" stroke-miterlimit="10" width="142.867" height="142.868"/>
+	<rect x="-467.214" y="107.15" display="inline" stroke="#FFFFFF" stroke-miterlimit="10" width="142.867" height="142.868"/>
+	<rect x="-262.437" y="107.15" display="inline" stroke="#FFFFFF" stroke-miterlimit="10" width="142.867" height="142.868"/>
+	<rect x="-52.898" y="107.15" display="inline" stroke="#FFFFFF" stroke-miterlimit="10" width="142.867" height="142.868"/>
 </g>
-<g>
-	<g>
-		<g>
-			<path fill="#D8D9DD" d="M416.184,4C284.679,4,178.07,110.607,178.07,242.112c0,131.505,106.608,238.112,238.112,238.112
-				c131.505,0,238.11-106.605,238.11-238.112C654.294,110.607,547.688,4,416.184,4z M416.184,432.602
-				c-105.202,0-190.489-85.28-190.489-190.49c0-105.202,85.287-190.489,190.489-190.489c105.207,0,190.487,85.287,190.487,190.489
-				C606.672,347.32,521.391,432.602,416.184,432.602z"/>
-		</g>
-	</g>
-	<path fill="#D8D9DD" d="M435.231,242.112c0,15.777-10.658,28.573-23.812,28.573l0,0c-13.151,0-23.811-12.796-23.811-28.573V99.245
-		c0-15.777,10.657-28.573,23.811-28.573l0,0c13.153,0,23.812,12.796,23.812,28.573V242.112z"/>
-	<path fill="#D8D9DD" d="M402.354,271.448c-13.392-8.349-18.259-24.722-10.873-36.579l0,0c7.392-11.858,24.233-14.701,37.627-6.357
-		l121.256,75.552c13.392,8.35,18.259,24.727,10.872,36.585l0,0c-7.386,11.853-24.234,14.699-37.626,6.355L402.354,271.448z"/>
-</g>
+<path fill="#39456F" d="M282.291,249.25c0,21.619-17.525,39.146-39.146,39.146c-21.619,0-39.146-17.526-39.146-39.146
+	c0-21.62,17.527-39.146,39.146-39.146C264.766,210.104,282.291,227.63,282.291,249.25"/>
+<path fill="#FFFFFF" d="M273.521,249.25c0,16.775-13.6,30.376-30.375,30.376c-16.776,0-30.376-13.601-30.376-30.376
+	c0-16.776,13.6-30.377,30.376-30.377C259.922,218.873,273.521,232.474,273.521,249.25"/>
+<path fill="none" stroke="#0090FF" stroke-width="6.533" stroke-linecap="round" stroke-miterlimit="10" d="M243.146,225.527
+	c13.047,0,23.624,10.577,23.624,23.624"/>
+<path fill="#39456F" d="M249.646,207.258h-13c-1.105,0-2-0.895-2-2v-2.5c0-1.104,0.895-2,2-2h13c1.104,0,2,0.896,2,2v2.5
+	C251.646,206.363,250.751,207.258,249.646,207.258"/>
+<line fill="none" stroke="#39456F" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="243.146" y1="236.508" x2="243.146" y2="249.249"/>
+<path fill="#39456F" d="M247.992,250.355c0,2.677-2.17,4.847-4.847,4.847s-4.847-2.17-4.847-4.847c0-2.678,2.17-4.848,4.847-4.848
+	S247.992,247.678,247.992,250.355"/>
 </svg>

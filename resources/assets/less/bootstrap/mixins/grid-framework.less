@@ -18,9 +18,6 @@
       position: relative;
       // Prevent columns from collapsing when empty
       min-height: 1px;
-      // Inner gutter via padding
-      padding-left:  (@grid-gutter-width / 2);
-      padding-right: (@grid-gutter-width / 2);
     }
   }
   .col(1); // kickstart it
@@ -46,6 +43,7 @@
 .calc-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
   .col-@{class}-@{index} {
     width: 50%;
+    padding: 0;
   }
 }
 .calc-grid-column(@index, @class, @type) when (@type = push) and (@index > 0) {

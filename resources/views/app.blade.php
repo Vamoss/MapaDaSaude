@@ -52,95 +52,78 @@
 
           <!--/as coisas que a frora fez-->
            
-
-            <button id="botao" type="submit"><h2>Faça sua denúncia</h2></button>
+          <div class="denunciar">
+            <h1>Faça agora sua denúncia</h1>
+            <button id="botao" type="submit"><h2><DIV>DENUNCIE</DIV></h2></button>
+          </div>
              
 
             <div class="janeladafroralinda" id='question-1'>
               <label class="pergunta">O que você quer <br>denunciar?</label>
-                <button class='question-2 resposta demora' >Demora no atendimento</button><br>
-                <button class='question-3 resposta medico' >Ausência de médico</button><br>
-                <button class='question-4 resposta plano' >Plano de Saúde</button>
-                <button class='question-5 resposta ambulancia' >Demora na Ambulância</button>
-                <button class='question-6 resposta' >Outro</button>
-                <button class='question-7 resposta' >Mais um</button>
-                <button class='question-8 resposta' >Outro</button>
-                <button class='question-9 resposta' >Mais um</button>
-                <button class='question-10 resposta' >Outro</button>
-                <button class='question-11 resposta' >Mais um</button>
-                <button class='question-12 resposta' >Outro</button>
-                <button class='question-13 resposta' >Mais um</button>
+                <button class='question-2 resposta demora' >Demora no <br>atendimento</button><br>
+                <button class='question-3 resposta medico' >Ausência de <br>médico</button><br>
+                <button class='question-4 resposta plano' >Plano de <br>Saúde</button>
+                <button class='question-5 resposta ambulancia' >Demora na <br>Ambulância</button>
+                <button class='question-6 resposta medicamentos' >Ausência de <br>medicamentos</button>
               </div>
                       <div class='janeladafroralinda' id='question-2'>
-                          <label class='pergunta'>Por quanto tempo você esperou?</label>
-                          <p class='resposta'> blablabla</p>
+                        <label class='pergunta'>Por quanto tempo você esperou?</label>
+                        <p class='resposta'> blablabla</p>
                           <div class="footer">
-                          <button class='button-back' target='_blank'></button>
-                          <button class='button-next' target='_blank'></button>
-                        </div>
-                        </div>
-
-                        <div class='janeladafroralinda' id='question-3'>
-                              <label class='pergunta'>Que tipo de médico?</label>
-                          <div class="form-group">
-                            <input type="text" class="complete">
-                          </div>                              
-                          <div class="footer">
-                          <button class='button-back' target='_blank'></button>
-                          <button class='button-next' target='_blank'></button>
-                        </div>
-                            </div>
-
-                        <div class='janeladafroralinda' id='question-4'>
-                              <label class='pergunta'>Qual foi o problema?</label>
-                              <h1>Selecione um ou mais:</h1>
-                                <input type="radio" value="autorizacao" checked> AUTORIZAÇÃO DE PROCEDIMENTO<br>
-                                <input type="radio" value="negligencia"> NEGLIGÊNCIA<br>
-                                <input type="radio" value="impericia"> IMPERÍCIA
-                          <div class="footer">
-                          <button class='button-back' target='_blank'></button>
-                          <button class='button-next' target='_blank'></button>
-                        </div>
-                            </div>
+                            <button class='button-back'>CANCELAR</button>
+                            <button class='button-next'>PRÓXIMO</button>
+                          </div>
+                      </div>
 
                         <div class='janeladafroralinda' id='question-21'>
                           <label class='pergunta'>Onde você foi atendido?</label>
                           <div class="form-group">
                             <input type="text" class="complete">
                           </div>
-                          <div class="footer">
-                          <button class='button-back' target='_blank'></button>
-                          <button class='button-next' target='_blank'></button>
-                        </div>
+                          <div class='footer'>
+                            <button class='button-back'>CANCELAR</button>
+                            <button class='button-next'>PRÓXIMO</button>
+                          </div>
                         </div>
 
-                        <div class='janeladafroralinda' id='question-22'>
+                        <div class='janeladafroralinda' data-bailedefavela="3" id='question-22'>
                           <label class='pergunta'>Você tem plano de saúde?</label>
                             <button class='yes'>SIM</button>
                             <button class='no'>NÃO</button>
                             <div id='qual'>
                               <label class='qual'>Qual?</label>
-                              <div class="form-group">
-                                <input type="text" class="complete">
-                              </div>
+                                <div class="form-group">
+                                  <input type="text" class="complete">
+                                </div>
                             </div> 
                           <div class="footer">
-                          <button class='button-back' target='_blank'></button>
-                          <button class='button-next' target='_blank'></button>
+                            <button class='button-back'>CANCELAR</button>
+                            <button class='button-next'>PRÓXIMO</button>
+                          </div>
                         </div>
+
+                        <div class='janeladafroralinda' id='question-3'>
+                          <label class='pergunta'>Que tipo de médico?</label>
+                          <div class="form-group">
+                            <input type="text" class="complete">
+                          </div>                              
+                          <div class="footer">
+                            <button class='button-back'>CANCELAR</button>
+                            <button class='button-next'>PRÓXIMO</button>
+                          </div>
                         </div>
 
                         <div class='janeladafroralinda' id='question-4'>
-                              <label class='pergunta'>Qual foi o problema?</label>
-                              <h1>Selecione um ou mais:</h1>
-                                <input type="radio" value="autorizacao" checked> AUTORIZAÇÃO DE PROCEDIMENTO<br>
-                                <input type="radio" value="negligencia"> NEGLIGÊNCIA<br>
-                                <input type="radio" value="impericia"> IMPERÍCIA
+                          <label class='pergunta'>Qual foi o problema?</label>
+                          <h1>Selecione um ou mais:</h1>
+                          <input type="radio" value="autorizacao" checked> AUTORIZAÇÃO DE PROCEDIMENTO<br>
+                          <input type="radio" value="negligencia"> NEGLIGÊNCIA<br>
+                          <input type="radio" value="impericia"> IMPERÍCIA
                           <div class="footer">
-                          <button class='button-back' target='_blank'></button>
-                          <button class='button-next' target='_blank'></button>
+                            <button class='button-back'>CANCELAR</button>
+                            <button class='button-next'>PRÓXIMO</button>
+                          </div>
                         </div>
-                            </div>
 
                         <div class='janeladafroralinda' id='question-41'>
                           <label class='pergunta'>Qual o seu plano de saúde?</label>
@@ -148,24 +131,26 @@
                             <input type="text" class="complete">
                           </div>
                           <div class="footer">
-                          <button class='button-back' target='_blank'></button>
-                          <button class='button-next' target='_blank'></button>
-                        </div>
+                            <button class='button-back'>CANCELAR</button>
+                            <button class='button-next'>PRÓXIMO</button>
+                          </div>
                         </div>
 
                         <div class='janeladafroralinda' id='obrigado'>
                           <label class='pergunta'>Obrigado.</label>
-                          <h1>Você é mais que uma estatística.</h1>
+                          <h3>Você é mais que uma estatística.</h3>
                           <p>Conte sua história. Complete sua denúncia com mais detalhes:</p>
                             <div class="historia">
-                            <div class="triangulo"></div>
-                            <textarea id="texto"rows="5" cols="50"></textarea>
+                              <div class="triangulo"></div>
+                              <textarea id="texto"rows="5" cols="50"></textarea>
                             </div>
                           <div class="footer">
-                          <button class='button-back' target='_blank'></button>
-                        </div>
+                            <button class='button-back'>CANCELAR</button>
+                          </div>
                         </div>
                       </form>
+
+
            <div id="loginWindow" class="janeladafroralinda">
             <label class="pergunta">Nome e cadastro </label>
             <p>Não divulgaremos seus dados para ninguém.</p>
@@ -176,8 +161,8 @@
                 <input type="text" class='complete' placeholder="Seu e-mail">
                 <input type="text" class='complete' placeholder="Sua senha"> 
                   <div class="footer">
-                    <button class='button-back' target='_blank'></button>
-                    <button class='button-next' target='_blank'></button>
+                    <button class='button-back'>CANCELAR</button>
+                    <button class='button-next'>PRÓXIMO</button>
                   </div>     
            <!--ebaaa-->
 
@@ -185,81 +170,6 @@
 
         </div>
         <!--sidebar end-->
-
-
-      <!--denuncieWindow begin-->
-        <div id="denuncieWindow" class="modal fade" role="dialog">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Denuncie</h4>
-              </div>
-              <div class="modal-body">
-                  <div class="row">
-                    <form role="form" class="form-horizontal">
-                      <div class="form-group">
-                          <label for="email" class="col-sm-2 control-label">
-                              Tipo</label>
-                          <div class="col-sm-10">
-                            @if (count($tiposDenuncias))
-                                @foreach($tiposDenuncias as $tipoDenuncia)
-                                    <input type="radio" name="tipo" value="{{$tipoDenuncia['id']}}">{{$tipoDenuncia['nome']}}<br>
-                                @endforeach
-                            @endif
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="data" class="col-sm-2 control-label">
-                              Data</label>
-                          <div class="col-sm-10">
-                              <input type="text" class="form-control" id="data" placeholder="dd/mm/yyyy" required="" />
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="unidade" class="col-sm-2 control-label">
-                              Unidade de atendimento</label>
-                          <div class="col-sm-10">
-                            <input type="radio" name="unidade" value="publica">Pública<br>
-                            <input type="radio" name="unidade" value="privada">Privada
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="local" class="col-sm-2 control-label">
-                              Local</label>
-                          <div class="col-sm-10">
-                              <input type="text" class="form-control" id="local" placeholder="Local do ocorrido (unidade de saúde)" required="" />
-                              <div id="mapLocal"></div>
-                              <input type="hidden" name="lat" value="" id="lat" />
-                              <input type="hidden" name="lng" value="" id="lng" />
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="municipio" class="col-sm-2 control-label">
-                              Provedor</label>
-                          <div class="col-sm-10">
-                            <input type="radio" name="provedor" value="0">SUS<br>
-                            <input type="radio" name="provedor" value="1">Plano de Saúde
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="plano" class="col-sm-2 control-label">
-                              Plano de Saúde</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" id="plano" placeholder="Digite para buscar ou deixe em vazio" required="" />
-                            <input type="hidden" name="planoId" id="planoId" value="">
-                          </div>
-                      </div>
-                      <div class="row">
-                        <button type="submit" class="btn btn-primary btn-lg col-md-offset-2">Denunciar</button>
-                      </div>
-                      </form>
-                  </div>
-              </div>
-          </div>
-        </div>
-      </div>
-      <!--denuncieWindow end-->
 
 
     </div>
