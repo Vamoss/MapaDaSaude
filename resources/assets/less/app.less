@@ -1,12 +1,9 @@
-@import "bootstrap/bootstrap";
-@import "typeahead";
+
 
 html, body, .container-fluid, .row, .map { 
 	margin: auto;
 	padding: 0;
 }
-
-body { padding-top: 50px; }
 
 .navbar-default{
 	background-color: #fff;
@@ -14,15 +11,17 @@ body { padding-top: 50px; }
 }
 
 .map {
-  transition: width 0.5s;   
+  transition: width 0.5s; 
+    position: relative; 
 }
 
 #map {
   width: 100%;
-  height: 100vh;
+  height: 45vh;
 
-  @media screen and (max-width: 960px) {
-    height: 50vh;
+    @media screen and (min-width: 960px) {
+    height: 90vh;
+
     }
 }
 
@@ -30,16 +29,6 @@ body { padding-top: 50px; }
     height:200px;
     width:100%;
     display: none;
-}
-
-#infoWindow h1{
-	color: #d12028;
-}
-
-#infoWindow h2{
-	color: #aaa;
-	text-align: right;
-	font-size: 11px;
 }
 
 #loginWindow {
@@ -55,19 +44,50 @@ body { padding-top: 50px; }
     margin: 30%;
     margin-bottom: 0;
     margin-top: 20px;
-    color: #f94646;
+    h2{
+        color: #f94646;
+    }
+}
+
+#bluetao {
+    width: 40%;
+    margin: auto;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 30%;
+    margin-bottom: 0;
+    margin-top: 20px;
+    color: #0091ff;
     outline: none;
-    font-size: 24px;
+    font-size: 12px;
+}
+
+.tempo {
+    width: 70%;
+    height: 100px;
+    margin-left: 10%;
+    display: inline-block;
+    text-align: center;
+}
+
+.time {
+    width: 100px;
+    border: none;
+    font-size: 140px;
+    color: #0091ff;
+    outline: none;
+    text-align: center;
 }
 
 .denunciar {
     background-color: #f94646;
-    height: 50vh;
+    height: 45vh;
     width: 100%;
     margin: none;
     padding: 0;
         @media screen and (min-width: 960px) {
-        height: 100vh;
+        height: 90vh;
         padding-top: 20%;
         }
 }
@@ -79,22 +99,22 @@ body { padding-top: 50px; }
 }
 
 .pergunta {
-    font-size: 56px;
+    font-size: 28px;
     font-variant: bold;
-    line-height: 67px;
+    line-height: 34px;
     font: sans-serif;
+    color: #3f476d;
     margin: auto;
     text-align: center;
     padding-top: 40px;
     padding-bottom: 20px;
     display: block;
     width: 100%;
-    height: 45vh;
 }
 
 .janeladafroralinda .resposta {
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 20px;
+    line-height: 24px;
     font: sans-serif;
     margin: auto;
     text-decoration: none;
@@ -148,16 +168,21 @@ body { padding-top: 50px; }
     }
 
 h1 {
-    font-size: 64px;
-    line-height: 77px;
+    font-size: 32px;
+    line-height: 38px;
     color: white;
     text-align: center;
     margin: 0;
     padding-top: 10%;
 }
+    h2{
+        color: #3f476d;
+    }
 
 p {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3f476d;
     text-align: center;
 }
 
@@ -195,14 +220,15 @@ p {
 
 .complete {
     width: 70%;
-    height: auto;
-    background-color: #d8d9dd;
+    height: 50px;
+    color: #1590ff;
     margin-top: 3%;
     margin-left: 15%;
     margin-right: 15%;
-    border: none;
+    border: solid 1px #3f476d;
+    border-radius: 5px;
     font-variant: bold;
-    font-size: 20px;
+    font-size: 10px;
     padding: 10px;
     outline: none;
 }
@@ -211,9 +237,11 @@ p {
     display: flex;
     justify-content: space-between;
     width: 70%;
-    background-color: #eaeaea;
-    color: #a3a3a3;
+    height: 50px;
+    background-color: #1590ff;
+    color: white;
     border: none;
+    border-radius: 5px;
     margin: 15%;
     margin-bottom: 0;
     margin-top: 20px;
@@ -222,9 +250,6 @@ p {
 }
 
 .entre {
-    background-image: url('../img/avatar.svg');
-    background-position: center right;
-    background-repeat: no-repeat;
     float: right;
     padding-right: 25px;
     outline: none;
@@ -287,9 +312,10 @@ p {
     color: white;
     background-color: #cccccc;
     font-variant: bold;
-    margin-left: 35%;
+    margin-left: 25%;
     margin-right: 5%;
     outline: none;
+    font-size: 30px;
 }
 
 .no {
@@ -300,9 +326,10 @@ p {
     color: white;
     background-color: #cccccc;
     font-variant: bold;
-    margin-right: 35%;
+    margin-right: 25%;
     float: right;
     outline: none;
+    font-size: 30px;
 }
 
 #texto {
@@ -348,7 +375,7 @@ p {
 
 .bigger {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     @media screen and (min-width: 960px) {
         width: 80%;
         }
@@ -358,5 +385,120 @@ p {
     background-color: black;
 }
 
+.blue {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
 
+.search-button {
+    height: 30px;
+    width: 30px;
+    border: none;
+    top: 0;
+    outline: none;
+    margin-top: 10px;
+    float: right;
+    img {
+        height: 100%;
+    }
+}
 
+.cancel-button {
+    height: 30px;
+    width: 30px;
+    border: none;
+    top: 0;
+    outline: none;
+    margin-top: 10px;
+    float: right;
+    display: none;
+    img {
+        height: 100%;
+    }
+}
+
+.form-control {
+    height: 100%;
+    border-color: blue;
+    background-color: #3f476d;
+    border-radius: 5px;
+    outline: 0;
+    display: none;
+    float: right;
+    float: right;
+    height: 30px;
+    width: 150px;
+    margin-top: 7px;
+    margin-left: 10px;
+}
+
+.nav {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+  .navbar-nav {
+    float: right;
+    margin: 0;
+    padding: 0;
+    li {
+        margin: 10px;
+        a {
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        display: block;
+        background-color: #0091ff;
+        border-radius: 5px;
+        width: 62px;
+        height: 27px;
+        text-decoration: none;
+    }
+  }
+}
+
+.navbar-header {
+    margin-right: 0;
+    background-color: #3f476d;
+    width: 100%;
+    height: 10vh;
+}
+
+#bs-navbar-collapse-1 {
+    display: inline-block;
+    top: 0;
+    margin: 0;
+}
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; 
+    display: table; 
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.navbar-form {
+    display: flex;
+}
+
+.navbar-brand {
+    img{
+        height: 43px;
+    }
+}
+
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}

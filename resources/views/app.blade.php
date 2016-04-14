@@ -3,6 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
     <link rel="shortcut icon" href="{{ URL::asset('img/favicon.png') }}" />
     <title>Mapa da Sa&uacute;de</title>
@@ -15,11 +16,19 @@
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
-            <a class="navbar-brand" href="/">Mapa da Saúde</a>
+            <a class="navbar-brand" href="/">
+              <img src="img/MdS.svg" alt="Mapa da Saúde">
+            </a>
             <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
             <form class="navbar-form navbar-right" role="search">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" placeholder="Consulte as denúncias">
+              <a class="search-button">
+                <img src="img/search.svg" alt="search">
+              </a>
+              <a class="cancel-button">
+                <img src="img/cancel.svg" alt="cancel">
+              </a>
               </div>
            </form>
           </div>
@@ -39,6 +48,10 @@
         <!--map begin-->
         <div class="col-sm-8 col-md-9 map">
           <div class="google-map-canvas" id="map">
+          </div>          
+          <div class='blue'>
+            <h1>Explore o mapa da <br>saúde</h1>
+            <button id="bluetao" type="submit"><h2><div>EXPLORE</div></h2></button>
           </div>
         </div>
         <!--map end-->
@@ -54,7 +67,7 @@
            
           <div class="denunciar">
             <h1>Faça agora sua denúncia</h1>
-            <button id="botao" type="submit"><h2><DIV>DENUNCIE</DIV></h2></button>
+            <button id="botao" type="submit"><h2><div>DENUNCIE</div></h2></button>
           </div>
              
 
@@ -68,10 +81,17 @@
               </div>
                       <div class='janeladafroralinda' id='question-2'>
                         <label class='pergunta'>Por quanto tempo você esperou?</label>
-                        <p class='resposta'> blablabla</p>
+                        <div class='tempo'>
+                          <h2>H</h2>
+                          <input type="text" class="time" placeholder="12">
+                        </div>
+                        <div class='tempo'>
+                          <h2>Min</h2>
+                          <input type="text" class="time" placeholder="45">
+                        </div>
                           <div class="footer">
                             <button class='button-back'>CANCELAR</button>
-                            <button class='button-next'>PRÓXIMO</button>
+                            <button class='button-next go-next'>PRÓXIMO</button>
                           </div>
                       </div>
 
@@ -82,7 +102,7 @@
                           </div>
                           <div class='footer'>
                             <button class='button-back'>CANCELAR</button>
-                            <button class='button-next'>PRÓXIMO</button>
+                            <button class='button-next go-next'>PRÓXIMO</button>
                           </div>
                         </div>
 
@@ -98,7 +118,7 @@
                             </div> 
                           <div class="footer">
                             <button class='button-back'>CANCELAR</button>
-                            <button class='button-next'>PRÓXIMO</button>
+                            <button class='button-next go-end'>PRÓXIMO</button>
                           </div>
                         </div>
 
@@ -109,7 +129,7 @@
                           </div>                              
                           <div class="footer">
                             <button class='button-back'>CANCELAR</button>
-                            <button class='button-next'>PRÓXIMO</button>
+                            <button class='button-next go-end'>PRÓXIMO</button>
                           </div>
                         </div>
 
@@ -121,7 +141,7 @@
                           <input type="radio" value="impericia"> IMPERÍCIA
                           <div class="footer">
                             <button class='button-back'>CANCELAR</button>
-                            <button class='button-next'>PRÓXIMO</button>
+                            <button class='button-next go-next'>PRÓXIMO</button>
                           </div>
                         </div>
 
@@ -132,7 +152,7 @@
                           </div>
                           <div class="footer">
                             <button class='button-back'>CANCELAR</button>
-                            <button class='button-next'>PRÓXIMO</button>
+                            <button class='button-next go-end'>PRÓXIMO</button>
                           </div>
                         </div>
 
@@ -153,13 +173,13 @@
 
            <div id="loginWindow" class="janeladafroralinda">
             <label class="pergunta">Nome e cadastro </label>
-            <p>Não divulgaremos seus dados para ninguém.</p>
+            <p>Não divulgaremos seus dados para ninguém.</p> 
+                <input type="text" class='complete nome' placeholder="Seu nome">  
+                <input type="text" class='complete' placeholder="Seu e-mail">
+                <input type="text" class='complete' placeholder="Sua senha">
               <div class="form-group">
                 <button class="entrar">JÁ FEZ UMA DENÚNCIA ANTES?<label class='entre'>ENTRAR</label></button>
               </div>    
-                <input type="text" class='complete nome' placeholder="Seu nome">  
-                <input type="text" class='complete' placeholder="Seu e-mail">
-                <input type="text" class='complete' placeholder="Sua senha"> 
                   <div class="footer">
                     <button class='button-back'>CANCELAR</button>
                     <button class='button-next'>PRÓXIMO</button>

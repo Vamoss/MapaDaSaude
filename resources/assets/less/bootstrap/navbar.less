@@ -88,6 +88,7 @@
 .navbar-fixed-bottom {
   .navbar-collapse {
     max-height: @navbar-collapse-max-height;
+/*    display: none;*/
 
     @media (max-device-width: @screen-xs-min) and (orientation: landscape) {
       max-height: 200px;
@@ -160,10 +161,7 @@
 
 .navbar-brand {
   float: left;
-  padding: @navbar-padding-vertical @navbar-padding-horizontal;
-  font-size: @font-size-large;
-  line-height: @line-height-computed;
-  height: @navbar-height;
+  padding: 15px;
 
   &:hover,
   &:focus {
@@ -171,7 +169,9 @@
   }
 
   > img {
-    display: block;
+    display: inline-block;
+    width: 42px;
+
   }
 
   @media (min-width: @grid-float-breakpoint) {
@@ -230,9 +230,7 @@
 float: right;
 
   > li > a {
-    padding-top:    10px;
-    padding-bottom: 10px;
-    line-height: @line-height-computed;
+    margin: 15px;
   }
 
   @media (max-width: @grid-float-breakpoint-max) {
@@ -289,7 +287,6 @@ float: right;
   .form-group {
     @media (max-width: @grid-float-breakpoint-max) {
       margin-bottom: 5px;
-      width: 30%;
 
       &:last-child {
         margin-bottom: 0;
@@ -386,14 +383,6 @@ float: right;
   background-color: @navbar-default-bg;
   border-color: @navbar-default-border;
 
-  .navbar-brand {
-    color: @navbar-default-brand-color;
-    &:hover,
-    &:focus {
-      color: @navbar-default-brand-hover-color;
-      background-color: @navbar-default-brand-hover-bg;
-    }
-  }
 
   .navbar-text {
     color: @navbar-default-color;
@@ -402,6 +391,9 @@ float: right;
   .navbar-nav {
     > li > a {
       color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       &:hover,
       &:focus {

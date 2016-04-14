@@ -592,7 +592,7 @@ function initMap() {
 		zoom: 4,
 		streetViewControl: false,
 		mapTypeControl: false,
-		styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
+		styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#1590ff"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#56aced"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#1590ff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#1590ff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#1590ff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#1590ff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#56aced"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#56aced"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"off"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#1590ff"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#1590ff"},{"lightness":17},{"weight":1.2}]}]
 	});
 }
 
@@ -785,9 +785,9 @@ function initUI() {
 	//login
 	$('#loginButton').on('click', function( event ) {
 		$('#loginWindow').toggle('show').removeClass('hide');
-		$('#botao').toggle('show');
+		$('.denunciar').toggle('show');
 		$('#janeladafroralinda').toggle('hide');
-		$('.col-md-9').removeClass('smaller');
+		$('.col-md-9').addClass('smaller');
 		$('#question-1').addClass('hide').removeClass('show');
 		$("#question-2").removeClass("show");
         $("#question-3").removeClass("show");
@@ -801,6 +801,19 @@ function initUI() {
 
 	$('button.entrar').click (function ( event ) {
 		$('.nome').addClass('hide');
+	});
+
+
+	$('.search-button').click (function ( event ) {
+		$('.form-control').addClass('show');
+		$('.navbar-brand').addClass('hide');
+		$('.cancel-button').addClass('show');
+	});
+
+	$('.cancel-button').click (function ( event ) {
+		$('.form-control').removeClass('show');
+		$('.navbar-brand').removeClass('hide');
+		$('.cancel-button').removeClass('show');
 	});
 
 /************************************************************************/
@@ -819,23 +832,35 @@ function initUI() {
 		$('.denunciar').addClass('hide').removeClass('show');
  	});
 
- 	var current=0;
- 	var pages = ["#question-2", "#question-21", "#question-22", "#obrigado"];
+ 	$('#bluetao').click (function () {
+ 		$('.col-sm-8').addClass('bigger');
+ 		$('.col-sm-4').addClass('smaller');
+ 	});
 
- 	var changePage = function () {
-		if (current<pages.length){
+ 	var current=0;
+ 	var pages = ["#question-2", "#question-21", "#question-22", "#question-3", "#question-4", "#question-41", "#obrigado"];
+
+ 	var changePage = function (newpage) {
  			console.log(pages[current], current, $(this).attr('class')); // debug
  			$(pages[current]).removeClass('show'); // actions da pergunta enviada
- 			current++; // muda current pra próximo item do array // 
+ 			current=newpage; // muda current pra próximo item do array // 
  			$(pages[current]).addClass('show'); // set up da nova pergunta
- 		}
- 		else {
- 			current=0;
- 		};
  	};
 
 
- 	$('.button-next').click(changePage);
+ 	$('.go-next').click(function(){
+ 		changePage (current+1)
+ 	});
+ 	$('.button-back').click(function(){
+ 		changePage (current-1)
+ 	});
+ 	$('.go-end').click(function(){
+ 		changePage (pages.length-1)
+ 	});
+
+ 	$('.go-begin').click(function(){
+ 		changePage (0)
+ 	});
 
 
 
