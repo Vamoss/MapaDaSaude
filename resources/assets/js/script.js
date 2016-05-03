@@ -252,15 +252,17 @@ function initUI() {
  	});
 
  	$('#bluetao').click (function () {
- 		$('.col-sm-8').addClass('bigger');
- 		$('.col-sm-4').addClass('smaller');
+ 		$('.col-sm-8').addClass('biggerish');
+ 		$('.denunciar').addClass('smallerish');
+ 		$('.blue').addClass('hide');
+ 		$('#denuncia').addClass('hide');
  	});
 
  	var current=0;
  	var pages = ["#question-2", "#question-21", "#question-22", "#question-3", "#question-4", "#question-41", "#obrigado"];
 
  	var changePage = function (newpage) {
- 			console.log(pages[current], current, $(this).attr('class')); // debug
+ 			// console.log(pages[current], current, $(this).attr('class')); // debug
  			$(pages[current]).removeClass('show'); // actions da pergunta enviada
  			current=newpage; // muda current pra próximo item do array // 
  			$(pages[current]).addClass('show'); // set up da nova pergunta
@@ -282,6 +284,38 @@ function initUI() {
  	});
 
 
+ 	var time=1;
+ 	var changeTime = function (y) {
+ 		time = time+y;
+ 		$('.hora').html(time + 'h');
+ 	};
+
+ 	$('a.horarios').mousedown(function(){
+ 		$('a.horarios').addClass('clicks');
+ 	});
+
+ 	$('a.horarios').mouseup(function(){
+ 		$('a.horarios').removeClass('clicks');
+ 	});
+
+ 	$('.mais').click(function(){
+ 		if (time<99){			
+ 		changeTime(1)
+ 		$('.menos').removeClass('disabled');		
+ 		};
+ 	});
+
+
+ 	$('.menos').click(function(){
+ 		if (time>1){
+ 		changeTime(-1)
+ 		$('.menos').removeClass('disabled');
+		}
+		else if (time == 1) {
+ 		$('.menos').addClass('disabled');
+ 		};
+ 	});
+
 
     $('button.question-2').click(function() {
         $("#question-2").addClass("show");
@@ -297,47 +331,6 @@ function initUI() {
         $("#question-4").addClass("show");
         $('#question-1').removeClass('show').addClass('hide');
     });
-
-    $('button.button-back').click(function() {
-        $("#question-2").removeClass("show");
-        $("#question-21").removeClass("show");
-        $('#question-22').removeClass('show');
-        $("#question-3").removeClass("show");
-        $("#question-4").removeClass("show");
-        $('#question-41').removeClass('show');
-        $('#obrigado').removeClass('show');
-        $('#question-1').addClass('show');
-    });
-
- //    $('#loginWindow .button-back').click(function() {
- //    	$('#loginWindow').removeClass('show').addClass('hide');
- //    	$('#botao').removeClass('hide').addClass('show');
- //    	$('#question-1').removeClass('show');
- //    });
-
- //    $('#loginWindow .button-next').click(function() {
-	// 	$('#botao').addClass('show');
-	// 	$('#loginWindow').removeClass('show').addClass('hide');
-	// }); 
-
- //    $('#question-3 button.button-next').click(function() {
- //        $("#question-3").removeClass("show");
- //        $('#obrigado').addClass('show');
- //        $('#question-1').removeClass('show');
- //    });
-
- //    $('#question-4 button.button-next').click(function() {
- //        $("#question-4").removeClass("show");
- //        $('#question-41').addClass('show');
- //        $('#question-1').removeClass('show');
- //    });
-
- //    $('#question-41 button.button-next').click(function() {
- //        $("#question-4").removeClass("show");
- //        $('#question-41').removeClass('show');
- //        $('#obrigado').addClass('show');
- //        $('#question-1').removeClass('show');
- //    });
 
     $("button.yes").click(function(){
     	$("#qual").addClass('show');

@@ -2,7 +2,7 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="93px" height="99px" viewBox="197.5 196.07 93 99" enable-background="new 197.5 196.07 93 99" xml:space="preserve">
+	 width="93px" height="99px" viewBox="0 0 93 99" enable-background="new 0 0 93 99" xml:space="preserve">
 <g display="none">
 	<rect x="-731.518" display="inline" width="881.016" height="471.463"/>
 	<rect x="182.832" y="-171.441" display="inline" width="476.225" height="142.867"/>
@@ -11,13 +11,13 @@
 	<text transform="matrix(1 0 0 1 222.293 -93.8164)" display="inline" font-family="'Helvetica-Bold'" font-size="19.049">Icon Template</text>
 	<text transform="matrix(1 0 0 1 -667.2266 50.0039)" display="inline" font-family="'Helvetica-Bold'" font-size="29.3249">Reminders</text>
 	
-		<line display="inline" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="220.931" y1="-69.052" x2="268.553" y2="-69.052"/>
+		<line display="inline" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="220.932" y1="-69.052" x2="268.553" y2="-69.052"/>
 	<line display="inline" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" x1="-669.609" y1="78.577" x2="-588.65" y2="78.577"/>
 	<g display="inline">
 		<g>
 			<g>
-				<rect x="-630.568" y="149.144" width="41.532" height="41.155"/>
-				<path d="M-600.342,201.5h22.606v-22.396h-22.606V201.5z M-575.631,203.581h-26.812v-26.568h26.812V203.581L-575.631,203.581z
+				<rect x="-630.568" y="149.145" width="41.532" height="41.154"/>
+				<path d="M-600.342,201.5h22.606v-22.396h-22.606V201.5z M-575.631,203.581h-26.812v-26.567h26.812V203.581L-575.631,203.581z
 					 M-608.752,209.834h39.427V170.77h-39.427V209.834L-608.752,209.834z M-567.22,211.92h-43.637v-43.236h43.637V211.92
 					L-567.22,211.92z"/>
 				<polygon points="-608.409,210.172 -609.091,209.496 -569.664,170.427 -568.987,171.102 				"/>
@@ -42,7 +42,7 @@
 	<text transform="matrix(1 0 0 1 -264.8203 286.3555)" display="inline" font-family="'Helvetica-Bold'" font-size="14.2867">Ungroup</text>
 	<text transform="matrix(1 0 0 1 -264.8203 310.1641)" display="inline" font-family="'Helvetica'" font-size="11.4294">If your design has more than one </text>
 	<text transform="matrix(1 0 0 1 -264.8203 324.4531)" display="inline" font-family="'Helvetica'" font-size="11.4294">shape, make sure to ungroup</text>
-	<rect x="-55.279" y="276.21" display="inline" fill="none" width="166.678" height="154.773"/>
+	<rect x="-55.279" y="276.21" display="inline" fill="none" width="166.677" height="154.773"/>
 	<text transform="matrix(1 0 0 1 -55.2812 286.3555)" display="inline" font-family="'Helvetica-Bold'" font-size="14.2867">Save as</text>
 	<text transform="matrix(1 0 0 1 -55.2812 310.1641)" display="inline" font-family="'Helvetica'" font-size="11.4294">Save as .SVG and make sure “Use </text>
 	<text transform="matrix(1 0 0 1 -55.2812 324.4531)" display="inline" font-family="'Helvetica'" font-size="11.4294">Artboards” is checked</text>
@@ -56,20 +56,25 @@
 		<rect x="-216.267" y="161.174" width="49.075" height="48.365"/>
 		<rect x="-182.95" y="136.71" width="15.753" height="15.529"/>
 	</g>
-	<rect x="-667.227" y="107.15" display="inline" stroke="#FFFFFF" stroke-miterlimit="10" width="142.867" height="142.868"/>
-	<rect x="-467.214" y="107.15" display="inline" stroke="#FFFFFF" stroke-miterlimit="10" width="142.867" height="142.868"/>
-	<rect x="-262.437" y="107.15" display="inline" stroke="#FFFFFF" stroke-miterlimit="10" width="142.867" height="142.868"/>
-	<rect x="-52.898" y="107.15" display="inline" stroke="#FFFFFF" stroke-miterlimit="10" width="142.867" height="142.868"/>
+	<rect x="-667.227" y="107.15" display="inline" stroke="#FFFFFF" stroke-miterlimit="10" width="142.867" height="142.867"/>
+	<rect x="-467.214" y="107.15" display="inline" stroke="#FFFFFF" stroke-miterlimit="10" width="142.867" height="142.867"/>
+	<rect x="-262.437" y="107.15" display="inline" stroke="#FFFFFF" stroke-miterlimit="10" width="142.867" height="142.867"/>
+	<rect x="-52.898" y="107.15" display="inline" stroke="#FFFFFF" stroke-miterlimit="10" width="142.867" height="142.867"/>
 </g>
-<path fill="#39456F" d="M282.291,249.25c0,21.619-17.525,39.146-39.146,39.146c-21.619,0-39.146-17.526-39.146-39.146
-	c0-21.62,17.527-39.146,39.146-39.146C264.766,210.104,282.291,227.63,282.291,249.25"/>
-<path fill="#FFFFFF" d="M273.521,249.25c0,16.775-13.6,30.376-30.375,30.376c-16.776,0-30.376-13.601-30.376-30.376
-	c0-16.776,13.6-30.377,30.376-30.377C259.922,218.873,273.521,232.474,273.521,249.25"/>
-<path fill="none" stroke="#0090FF" stroke-width="6.533" stroke-linecap="round" stroke-miterlimit="10" d="M243.146,225.527
-	c13.047,0,23.624,10.577,23.624,23.624"/>
-<path fill="#39456F" d="M249.646,207.258h-13c-1.105,0-2-0.895-2-2v-2.5c0-1.104,0.895-2,2-2h13c1.104,0,2,0.896,2,2v2.5
-	C251.646,206.363,250.751,207.258,249.646,207.258"/>
-<line fill="none" stroke="#39456F" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="243.146" y1="236.508" x2="243.146" y2="249.249"/>
-<path fill="#39456F" d="M247.992,250.355c0,2.677-2.17,4.847-4.847,4.847s-4.847-2.17-4.847-4.847c0-2.678,2.17-4.848,4.847-4.848
-	S247.992,247.678,247.992,250.355"/>
+<g>
+	<path fill="none" stroke="#672B5C" stroke-width="8" stroke-linecap="round" stroke-miterlimit="10" d="M77.668,53.331
+		c0,16.642-13.491,30.133-30.133,30.133"/>
+	<g>
+		<path fill="#FFFFFF" d="M47,20.482c18.061,0,32.754,14.693,32.754,32.754c0,18.062-14.693,32.755-32.754,32.755
+			c-18.061,0-32.755-14.693-32.755-32.755C14.245,35.176,28.939,20.482,47,20.482 M47,14.482c-21.403,0-38.755,17.351-38.755,38.754
+			S25.597,91.991,47,91.991S85.754,74.64,85.754,53.236S68.403,14.482,47,14.482L47,14.482z"/>
+	</g>
+	<path opacity="0.4" fill="none" stroke="#F6F6F6" stroke-width="8" stroke-linecap="round" stroke-miterlimit="10" d="M47,22.663
+		c-16.642,0-30.133,13.49-30.133,30.133"/>
+	<path fill="#FFFFFF" d="M53.415,11.665h-12.83c-1.104,0-2-0.896-2-2V7.23c0-1.104,0.896-2,2-2h12.83c1.104,0,2,0.896,2,2v2.435
+		C55.415,10.77,54.52,11.665,53.415,11.665z"/>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="47" y1="40.623" x2="47" y2="53.236"/>
+	<circle fill="#FFFFFF" cx="47" cy="54.331" r="4.798"/>
+</g>
 </svg>

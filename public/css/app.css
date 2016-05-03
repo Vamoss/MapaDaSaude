@@ -6,6 +6,13 @@ body,
   margin: auto;
   padding: 0;
 }
+@font-face {
+  font-family: Hint;
+  src: url('fonts/Hint-Regular.ttf');
+}
+body {
+  font-family: Hint;
+}
 .navbar-default {
   background-color: #fff;
   border: 0;
@@ -21,7 +28,14 @@ body,
 @media screen and (min-width: 960px) {
   #map {
     height: 90vh;
+    width: 50%;
   }
+}
+#loginButton {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2px;
 }
 #mapLocal {
   height: 200px;
@@ -30,6 +44,7 @@ body,
 }
 #loginWindow {
   display: none;
+  background-color: #db5752;
 }
 #botao {
   width: 40%;
@@ -57,51 +72,44 @@ body,
   outline: none;
   font-size: 12px;
 }
-.tempo {
-  width: 70%;
-  height: 100px;
-  margin-left: 10%;
-  display: inline-block;
-  text-align: center;
-}
-.time {
-  width: 100px;
-  border: none;
-  font-size: 140px;
-  color: #0091ff;
-  outline: none;
-  text-align: center;
-}
 .denunciar {
   background-color: #f94646;
   height: 45vh;
   width: 100%;
   margin: none;
   padding: 0;
+  display: inline-block;
+  margin: 0;
 }
 @media screen and (min-width: 960px) {
   .denunciar {
     height: 90vh;
-    padding-top: 20%;
+    width: 50%;
+    font-family: Hint;
   }
 }
 .janeladafroralinda {
   max-width: 100%;
   margin: auto;
   overflow: scroll;
+  height: 90vh;
+  background-color: #db5752;
 }
 .pergunta {
   font-size: 28px;
   font-variant: bold;
   line-height: 34px;
   font: sans-serif;
-  color: #3f476d;
+  color: white;
   margin: auto;
   text-align: center;
   padding-top: 40px;
   padding-bottom: 20px;
   display: block;
   width: 100%;
+}
+#log {
+  background-color: #f76356;
 }
 .janeladafroralinda .resposta {
   font-size: 20px;
@@ -111,10 +119,9 @@ body,
   text-decoration: none;
   color: white;
   border: none;
-  background-color: #1590ff;
   text-align: left;
   padding-top: 20px;
-  border-bottom: 2px solid #d8d9dd;
+  border-bottom: 2px solid #f76356;
   padding-bottom: 10px;
   width: 100%;
 }
@@ -125,35 +132,36 @@ body,
 }
 .demora {
   background: url('../img/relogio.svg') no-repeat;
-  padding-left: 80px;
-  background-size: 70px;
+  padding-left: 70px;
+  background-size: 50px;
   background-position: left;
 }
 .medico {
   background: url('../img/cruz.svg') no-repeat;
-  padding-left: 80px;
-  background-size: 70px;
+  padding-left: 70px;
+  background-size: 50px;
   background-position: left;
 }
 .plano {
   background: url('../img/carteira.svg') no-repeat;
-  padding-left: 80px;
-  background-size: 70px;
+  padding-left: 70px;
+  background-size: 50px;
   background-position: left;
 }
 .ambulancia {
   background: url('../img/ambulancia.svg') no-repeat;
-  padding-left: 80px;
-  background-size: 70px;
+  padding-left: 70px;
+  background-size: 50px;
   background-position: left;
 }
 .medicamentos {
   background: url('../img/remedios.svg') no-repeat;
-  padding-left: 80px;
-  background-size: 70px;
+  padding-left: 70px;
+  background-size: 50px;
   background-position: left;
 }
 h1 {
+  font-family: Hint;
   font-size: 32px;
   line-height: 38px;
   color: white;
@@ -162,9 +170,11 @@ h1 {
   padding-top: 10%;
 }
 h2 {
+  font-family: Hint;
   color: #3f476d;
 }
 p {
+  font-family: Hint;
   font-size: 16px;
   line-height: 19px;
   color: #3f476d;
@@ -175,6 +185,9 @@ p {
 }
 #question-1 {
   display: none;
+}
+#question-1 .pergunta {
+  background-color: #f76356;
 }
 #question-2 {
   display: none;
@@ -196,17 +209,18 @@ p {
 }
 .complete {
   width: 70%;
-  height: 50px;
-  color: #1590ff;
+  height: 30px;
+  color: white;
   margin-top: 3%;
-  margin-left: 15%;
+  margin-left: 12%;
   margin-right: 15%;
-  border: solid 1px #3f476d;
+  border: solid 1px white;
   border-radius: 5px;
   font-variant: bold;
-  font-size: 10px;
+  font-size: 16px;
   padding: 10px;
   outline: none;
+  background-color: #db5752;
 }
 .entrar {
   display: -webkit-flex;
@@ -215,16 +229,15 @@ p {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  width: 70%;
+  width: 78%;
   height: 50px;
-  background-color: #1590ff;
+  background-color: #db5752;
   color: white;
   border: none;
   border-radius: 5px;
-  margin: 15%;
-  margin-bottom: 0;
-  margin-top: 20px;
-  padding-top: 10px;
+  border: solid 1px white;
+  margin: auto;
+  margin-top: 10px;
   outline: none;
 }
 .entre {
@@ -243,28 +256,24 @@ p {
   margin: 40px;
 }
 .footer {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   position: fixed;
   bottom: 30px;
-  width: 90%;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   margin: 5%;
+  right: 0;
+  width: 90%;
 }
 .button-back {
   height: 40px;
   width: 100px;
   margin: 0;
-  border: solid 1px #3f476d;
+  border: solid 1px white;
   display: inline-block;
   border-radius: 5px;
-  color: #3f476d;
-  background-color: white;
+  color: white;
+  background-color: #db5752;
   padding: 0;
   outline: none;
+  margin-right: 29%;
 }
 .button-next {
   height: 40px;
@@ -278,6 +287,10 @@ p {
   border: none;
   padding: 0;
   outline: none;
+}
+#anonimo {
+  margin-left: 12%;
+  margin-top: 15px;
 }
 .yes {
   height: 50px;
@@ -345,6 +358,9 @@ p {
     display: inline-block;
   }
 }
+.smallerish {
+  height: 15vh;
+}
 .bigger {
   width: 100%;
   height: 90vh;
@@ -354,15 +370,35 @@ p {
     width: 80%;
   }
 }
+.bigger #map {
+  height: 100%;
+}
+.biggerish {
+  width: 100%;
+  height: 75vh;
+}
+.biggerish #map {
+  height: 100%;
+}
 .selected {
   background-color: black;
 }
 .blue {
+  display: inline-block;
   position: absolute;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
+}
+@media screen and (min-width: 960px) {
+  .blue {
+    width: 50%;
+  }
+}
+.form-group {
+  right: 90px;
+  top: 0;
 }
 .search-button {
   height: 30px;
@@ -370,8 +406,9 @@ p {
   border: none;
   top: 0;
   outline: none;
-  margin-top: 10px;
-  float: right;
+  margin-top: 14px;
+  position: fixed;
+  right: 90px;
 }
 .search-button img {
   height: 100%;
@@ -391,7 +428,7 @@ p {
 }
 .form-control {
   height: 100%;
-  border-color: blue;
+  border: none;
   background-color: #3f476d;
   border-radius: 5px;
   outline: 0;
@@ -412,7 +449,7 @@ p {
   padding: 0;
 }
 .navbar-nav li {
-  margin: 10px;
+  margin: 13px;
 }
 .navbar-nav li a {
   color: white;
@@ -432,6 +469,8 @@ p {
   width: 62px;
   height: 27px;
   text-decoration: none;
+  font-variant: sans-serif;
+  font-size: 14px;
 }
 .navbar-header {
   margin-right: 0;
@@ -449,8 +488,36 @@ p {
   display: -ms-flexbox;
   display: flex;
 }
+.navbar-brand {
+  display: inline-block;
+  height: 30px;
+  margin: 13px;
+}
 .navbar-brand img {
-  height: 43px;
+  height: 100%;
+}
+.horarios {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin: auto;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.horarios a {
+  padding-top: 30px;
+}
+.horarios a.disabled {
+  opacity: 0.4;
+}
+.horarios .clicks {
+  padding-top: 35px;
+}
+.hora {
+  font-size: 100px;
+  color: white;
 }
 .hide {
   display: none !important;
