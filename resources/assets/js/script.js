@@ -1,5 +1,16 @@
 var SIMULATE_DATA = 0;//2000;//0 = use real data;
 var DEBUG = true;
+WebFontConfig = {
+    google: { families: [ 'Hind::latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
 
 /**********
 MAP
@@ -288,15 +299,49 @@ function initUI() {
  	var changeTime = function (y) {
  		time = time+y;
  		$('.hora').html(time + 'h');
+ 	if (time < 3){
+ 		$('#question-2').css('background', '-webkit-linear-gradient(left, #eb5f56 , #ce5557)');
+ 	}
+ 	else if (time < 4){
+ 		$('#question-2').css('background', '-webkit-linear-gradient(left, #dd5a56 , #c15157)');
+ 	}
+ 	else if (time < 5) {
+ 		$('#question-2').css('background', '-webkit-linear-gradient(left, #ce5557 , #b34c58)');
+ 	}
+ 	else if (time < 6) {
+ 		$('#question-2').css('background', '-webkit-linear-gradient(left, #c15157 , #a64858)');
+ 	}
+ 	else if (time < 7) {
+ 		$('#question-2').css('background', '-webkit-linear-gradient(left, #b34c58 , #9a4458)');
+ 	}
+ 	else if (time < 8) {
+ 		$('#question-2').css('background', '-webkit-linear-gradient(left, #a64858 , #8f4059)');
+ 	}
+ 	else if (time < 9) {
+ 		$('#question-2').css('background', '-webkit-linear-gradient(left, #9a4458 , #833c59)');
+ 	}
+ 	else if (time < 10) {
+ 		$('#question-2').css('background', '-webkit-linear-gradient(left, #8f4059 , #79395a)');
+ 	}
+ 	else if (time < 11) {
+ 		$('#question-2').css('background', '-webkit-linear-gradient(left, #833c59 , #6d355a)');
+ 	}
+ 	else if (time < 12) {
+ 		$('#question-2').css('background', '-webkit-linear-gradient(left, #79395a , #5b2f5b)');
+ 	}
+ 	else {
+ 		$('#question-2').css('background', '#5b2f5b');
+ 	}
  	};
 
- 	$('a.horarios').mousedown(function(){
- 		$('a.horarios').addClass('clicks');
+
+ 	$('a.horarios').click(function(){
+ 		$('a.horarios').toggleClass('clicks');
  	});
 
- 	$('a.horarios').mouseup(function(){
- 		$('a.horarios').removeClass('clicks');
- 	});
+ 	// $('a.horarios').mouseup(function(){
+ 	// 	$('a.horarios').toggleClass('clicks');
+ 	// });
 
  	$('.mais').click(function(){
  		if (time<99){			

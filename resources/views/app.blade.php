@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
     <link rel="shortcut icon" href="{{ URL::asset('img/favicon.png') }}" />
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Hind'>
     <title>Mapa da Sa&uacute;de</title>
   </head>
   <body onload="onload()">
