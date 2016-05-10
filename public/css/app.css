@@ -509,6 +509,9 @@ p {
 .horarios a {
   padding-top: 30px;
 }
+.horarios a:active svg path {
+  opacity: 0.4;
+}
 .horarios a.disabled {
   opacity: 0.4;
 }

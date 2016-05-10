@@ -85,11 +85,33 @@
             <label class='pergunta'>Por quanto tempo você esperou?</label>
             <div class="horarios">
               <a class="menos disabled">
-                <img src="img/menos.svg" alt="menos">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                   width="37.834px" height="49.614px" viewBox="0 0 37.834 49.614" enable-background="new 0 0 37.834 49.614" xml:space="preserve">
+                  <g>
+                    <g>
+                      <path fill="#FFFFFF" d="M8.438,29.814L4.06,25.435c-0.453-0.453-0.453-1.188,0-1.643l20.201-20.2c0.454-0.454,1.189-0.454,1.643,0
+                        l4.379,4.379c0.453,0.453,0.453,1.188,0,1.642L10.081,29.814C9.628,30.268,8.893,30.268,8.438,29.814z"/>
+                      <path fill="#FFFFFF" d="M4.06,23.792l4.379-4.379c0.454-0.453,1.189-0.453,1.643,0l20.201,20.201c0.453,0.453,0.453,1.188,0,1.643
+                        l-4.379,4.379c-0.453,0.453-1.188,0.453-1.643,0L4.06,25.435C3.606,24.982,3.606,24.247,4.06,23.792z"/>
+                    </g>
+                  </g>
+                </svg>
               </a>
               <div class="hora">1h</div>
               <a class="mais">
-                <img src="img/mais.svg" alt="mais">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  width="37.834px" height="49.614px" viewBox="0 0 37.834 49.614" enable-background="new 0 0 37.834 49.614" xml:space="preserve">
+                  <g>
+                    <g>
+                      <path fill="#FFFFFF" d="M29.616,20.34l4.38,4.379c0.453,0.454,0.453,1.189,0,1.643L13.795,46.563
+                        c-0.453,0.453-1.189,0.453-1.643,0l-4.379-4.379c-0.453-0.454-0.453-1.189,0-1.643L27.975,20.34
+                        C28.428,19.887,29.163,19.887,29.616,20.34z"/>
+                      <path fill="#FFFFFF" d="M33.996,26.362l-4.38,4.379c-0.453,0.454-1.188,0.454-1.642,0L7.773,10.54
+                        c-0.453-0.453-0.453-1.188,0-1.642l4.379-4.379c0.453-0.454,1.189-0.454,1.643,0l20.201,20.2
+                        C34.449,25.173,34.449,25.909,33.996,26.362z"/>
+                    </g>
+                  </g>
+                </svg>
               </a>
             </div>
             <div class="footer">
