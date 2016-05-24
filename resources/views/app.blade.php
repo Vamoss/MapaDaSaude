@@ -42,12 +42,12 @@
       <!-- top nav end -->
 
       <!-- content begin -->
-      <div class="row">
 
         @yield('content')
 
+        <div class='content'>
         <!--map begin-->
-        <div class="col-sm-8 col-md-9 map">
+        <div class="map">
           <div class="google-map-canvas" id="map">
           </div>          
           <div class='blue'>
@@ -56,18 +56,9 @@
           </div>
         </div>
         <!--map end-->
-        
-                <!--sidebar begin-->
-        <div class="col-sm-4 col-md-3 sidebar">
-          <!--/row-->
-
-
-
-
-          <!--/as coisas que a frora fez-->
            
   <div class="denunciar">
-    <h1 id="denuncia">Faça agora sua denúncia</h1>
+    <h1 id="denuncia">Faça agora sua <br>denúncia</h1>
     <button id="botao" type="submit"><h2><div>DENUNCIE</div></h2></button>
   </div>
     
@@ -187,10 +178,10 @@
               <button class='button-back go-begin'>CANCELAR</button>
             </div>
           </div>
-        </form>
 
 
            <div id="loginWindow" class="janeladafroralinda">
+            <button class='button-back'>CANCELAR</button>
             <label class="pergunta" id="log">Crie um cadastro </label>
                 <input type="text" class='complete nome' placeholder="Seu nome">  
                 <input type="text" class='complete' placeholder="Seu e-mail">
@@ -198,12 +189,12 @@
                 <input type="checkbox" name="check" id="anonimo"/>
                 <label>Permanecer anonimo</label>
                   <div class="footer">
-                    <button class='button-back'>CANCELAR</button>
                     <button class='button-next'>PRÓXIMO</button>
                   </div>
                   <button class="entrar">JÁ FEZ UMA DENÚNCIA?<label class='entre'>ENTRAR</label></button>    
         </div>
         <!--sidebar end-->
+      </div>
     <!-- content end -->
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApquJfOtvb3NYITr_IMJE9vDiXmhuwNTA"></script>

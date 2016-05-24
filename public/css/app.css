@@ -2,13 +2,58 @@
 html,
 body,
 .container-fluid,
-.row,
-.map {
+.row {
   margin: auto;
   padding: 0;
 }
 body {
   font-family: 'Hind', sans-serif;
+}
+@-webkit-keyframes busca {
+  from {
+    width: 0;
+    margin-left: 195px;
+  }
+  to {
+    width: 175px;
+    margin-left: 20px;
+  }
+}
+@keyframes busca {
+  from {
+    width: 0;
+    margin-left: 195px;
+  }
+  to {
+    width: 175px;
+    margin-left: 20px;
+  }
+}
+@-webkit-keyframes cancel {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes cancel {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.content {
+  display: block;
+}
+@media screen and (min-width: 960px) {
+  .content {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 .navbar-default {
   background-color: #fff;
@@ -16,18 +61,19 @@ body {
 }
 .map {
   transition: width 0.5s;
-  position: relative;
-  padding-top: 10vh;
-}
-#map {
   width: 100%;
   height: 45vh;
 }
 @media screen and (min-width: 960px) {
-  #map {
-    height: 90vh;
+  .map {
     width: 50%;
+    height: 90vh;
   }
+}
+#map {
+  width: 100%;
+  height: 100%;
+  top: 10vh;
 }
 #loginButton {
   display: -webkit-flex;
@@ -44,6 +90,12 @@ body {
   display: none;
   background-color: #db5752;
 }
+#loginWindow .button-next {
+  width: 90%;
+}
+#loginWindow label {
+  color: white;
+}
 #botao {
   width: 40%;
   margin: auto;
@@ -56,6 +108,7 @@ body {
 }
 #botao h2 {
   color: #f94646;
+  padding-top: 5px;
 }
 #bluetao {
   width: 40%;
@@ -74,15 +127,17 @@ body {
   background-color: #f94646;
   height: 45vh;
   width: 100%;
-  margin: none;
+  margin: 0;
   padding: 0;
   display: inline-block;
-  margin: 0;
+  margin-top: 57px;
+  float: right;
 }
 @media screen and (min-width: 960px) {
   .denunciar {
     height: 90vh;
     width: 50%;
+    margin-top: 66px;
   }
 }
 .janeladafroralinda {
@@ -100,7 +155,7 @@ body {
   color: white;
   margin: auto;
   text-align: center;
-  padding-top: 40px;
+  padding-top: 60px;
   padding-bottom: 20px;
   display: block;
   width: 100%;
@@ -130,32 +185,32 @@ body {
 .demora {
   background: url('../img/relogio.svg') no-repeat;
   padding-left: 70px;
-  background-size: 50px;
-  background-position: left;
+  background-size: 40px;
+  background-position: 10px;
 }
 .medico {
   background: url('../img/cruz.svg') no-repeat;
   padding-left: 70px;
-  background-size: 50px;
-  background-position: left;
+  background-size: 40px;
+  background-position: 10px;
 }
 .plano {
   background: url('../img/carteira.svg') no-repeat;
   padding-left: 70px;
-  background-size: 50px;
-  background-position: left;
+  background-size: 40px;
+  background-position: 10px;
 }
 .ambulancia {
   background: url('../img/ambulancia.svg') no-repeat;
   padding-left: 70px;
-  background-size: 50px;
-  background-position: left;
+  background-size: 40px;
+  background-position: 10px;
 }
 .medicamentos {
   background: url('../img/remedios.svg') no-repeat;
   padding-left: 70px;
-  background-size: 50px;
-  background-position: left;
+  background-size: 40px;
+  background-position: 10px;
 }
 h1 {
   font-family: Hind;
@@ -164,7 +219,7 @@ h1 {
   color: white;
   text-align: center;
   margin: 0;
-  padding-top: 10%;
+  padding-top: 13%;
 }
 h2 {
   font-family: Hind;
@@ -261,24 +316,24 @@ p {
   width: 90%;
 }
 .button-back {
-  height: 40px;
-  width: 100px;
-  margin: 0;
+  height: 26px;
+  width: 98px;
+  margin: 10px;
   border: solid 1px white;
   display: inline-block;
   border-radius: 5px;
   color: white;
-  background-color: #db5752;
+  background-color: #f76356;
   padding: 0;
   outline: none;
-  margin-right: 29%;
+  float: right;
 }
 .button-next {
-  height: 40px;
-  width: 100px;
-  margin: 0;
+  height: 26px;
+  width: 98px;
+  margin: 10px;
   display: inline-block;
-  right: 0;
+  float: right;
   background-color: #0091ff;
   color: white;
   border-radius: 5px;
@@ -321,6 +376,7 @@ p {
   border: none;
   margin-left: -5px;
   outline: none;
+  width: 70%;
 }
 .triangulo {
   width: 0;
@@ -329,7 +385,7 @@ p {
   border-width: 0 20px 20px 0;
   border-color: transparent #d8d9dd transparent transparent;
   display: inline-block;
-  margin-bottom: 84px;
+  margin-bottom: 49px;
 }
 .historia {
   width: 100%;
@@ -384,11 +440,10 @@ p {
 .blue {
   display: inline-block;
   position: absolute;
-  height: 100%;
+  height: 45%;
   width: 100%;
-  top: 0;
+  top: 10vh;
   left: 0;
-  padding-top: 10vh;
 }
 @media screen and (min-width: 960px) {
   .blue {
@@ -405,38 +460,47 @@ p {
   border: none;
   top: 0;
   outline: none;
-  margin-top: 14px;
+  margin-top: 12px;
   position: fixed;
-  right: 90px;
+  right: 100px;
 }
 .search-button img {
   height: 100%;
 }
 .cancel-button {
-  height: 30px;
-  width: 30px;
+  height: 15px;
   border: none;
   top: 0;
   outline: none;
-  margin-top: 10px;
+  margin-top: 17px;
   float: right;
   display: none;
+  padding-left: 25px;
+  position: absolute;
+  -webkit-animation-name: cancel;
+  animation-name: cancel;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
 }
 .cancel-button img {
   height: 100%;
 }
 .form-control {
-  height: 100%;
-  border: none;
+  border: solid 1px white;
   background-color: #3f476d;
   border-radius: 5px;
   outline: 0;
   display: none;
   float: right;
   height: 30px;
-  width: 150px;
-  margin-top: 7px;
-  margin-left: 10px;
+  width: 175px;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding-left: 25px;
+  -webkit-animation-name: busca;
+  animation-name: busca;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
 }
 .nav {
   list-style: none;
@@ -508,8 +572,9 @@ p {
 }
 .horarios a {
   padding-top: 30px;
+  transition-duration: 1s;
 }
-.horarios a:active svg path {
+.horarios a:active svg {
   opacity: 0.4;
 }
 .horarios a.disabled {

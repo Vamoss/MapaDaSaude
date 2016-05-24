@@ -214,7 +214,7 @@ function initUI() {
 
 	//login
 	$('#loginButton').on('click', function( event ) {
-		$('#loginWindow').toggle('show').removeClass('hide');
+		$('#loginWindow').toggle('show');
 		$('.denunciar').toggle('show');
 		$('#janeladafroralinda').toggle('hide');
 		$('.col-md-9').addClass('smaller');
@@ -257,8 +257,9 @@ function initUI() {
         $('#question-22').removeClass('show');
         $('#question-41').removeClass('show');
         $('#obrigado').removeClass('show');
+        $('.blue').addClass('hide');
 		$('.map').addClass('smaller');
-		$('.col-sm-4').addClass('bigger');
+		$('.janeladafroralinda').addClass('bigger');
 		$('.denunciar').addClass('hide').removeClass('show');
  	});
 
@@ -270,7 +271,7 @@ function initUI() {
  	});
 
  	var current=0;
- 	var pages = ["#question-2", "#question-21", "#question-22", "#question-3", "#question-4", "#question-41", "#obrigado"];
+ 	var pages = ["#question-1","#question-2", "#question-21", "#question-22", "#question-3", "#question-4", "#question-41", "#obrigado"];
 
  	var changePage = function (newpage) {
  			// console.log(pages[current], current, $(this).attr('class')); // debug
@@ -330,7 +331,7 @@ function initUI() {
  		$('#question-2').css('background', '-webkit-linear-gradient(left, #79395a , #5b2f5b)');
  	}
  	else {
- 		$('#question-2').css('background', '#5b2f5b');
+ 		$('#question-2').css('background', '#5b2f5b)');
  	}
  	};
 
