@@ -11,10 +11,11 @@
 |
 */
 
+//para preencher o mapa com os dados iniciais
 Route::get('/dados', 'InicioController@dados');
 
+
 Route::get('/denuncias', 'DenunciasController@index');
-Route::get('/denuncias/create', 'DenunciasController@create');
 Route::post('/denuncias', 'DenunciasController@store');
 
 Route::get('/municipios', 'MunicipiosController@index');
