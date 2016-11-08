@@ -24,7 +24,12 @@ Através do sistema de Issues e Milestones do Github será estabelecido as metas
 Sua colaboração será feita utilizando Pull requests ❤
 
 ### Executando o projeto
-Instale as dependências
+Instale o xampp e o composer
+
+1. https://www.apachefriends.org/pt_br/download.html
+2. https://getcomposer.org/download/
+
+Pelo terminal, acesse a pasta do projeto e instale as dependências
 
 ```
 composer install
@@ -36,6 +41,12 @@ Compilando os CSSs e JSs
 ```
 npm run build
 ```
+
+Criando o ambiente de desenvolvimento
+
+1. crie um banco de dados no phpmyadmin, por exemplo "mapadasaude"
+1. duplique o arquivo .env.example e renomeie para .env
+2. altere no .env o DB_DATABASE, DB_USERNAME e DB_PASSWORD, geralmente é "mapadasaude", "root" e "" respectivamente 
 
 Inicializando o banco de dados com tabelas e dados
 
