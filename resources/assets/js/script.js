@@ -1,5 +1,6 @@
 var SIMULATE_DATA = 0;//2000;//0 = use real data;
 var DEBUG = true;
+var API_VERSION = "/api/v1";
 
 /*********
 MAP
@@ -165,7 +166,7 @@ var tiposDenunciasImagens = [];
 var denuncias = [];
 function carregaDados(){
 	if(DEBUG) console.log("carregando dados...");
-	$.getJSON("/dados", function(json) {
+	$.getJSON(API_VERSION+"/dados", function(json) {
 		if(DEBUG){
 			console.log("dados carregadas:");
 			console.log(json);
@@ -249,7 +250,7 @@ function initUI() {
 	//search estabelecimento
 	var estabelecimentosEngine = new Bloodhound({
 		remote: {
-			url: '/estabelecimento/query?estabelecimento=%QUERY',
+			url: API_VERSION+'/estabelecimento/query?estabelecimento=%QUERY',
 			wildcard: '%QUERY'
 		},
 		datumTokenizer: function(d) {
@@ -302,7 +303,7 @@ function initUI() {
 		sufficient : 0,
 		identify: function(obj) { return obj.nome; },
 		prefetch: {
-			url: '/planos/',
+			url: API_VERSION+'/planos/',
 			cache: false
 		}
 	});
