@@ -19,6 +19,7 @@ Route::get('/api/v1/denuncias', 'DenunciasController@index');
 Route::post('/api/v1/denuncias', 'DenunciasController@store');
 
 Route::get('/api/v1/municipios', 'MunicipiosController@index');
+Route::get('/api/v1/municipios/query', 'MunicipiosController@query');
 
 Route::get('/api/v1/planos', 'PlanosController@index');
 

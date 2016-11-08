@@ -43,9 +43,13 @@ function initMarkers(){
 			},
 			index: i
 		});
-		markers.push(marker);
-		oms.addMarker(marker);
+		addMarker(marker);
 	}
+}
+
+function addMarker(marker){
+	markers.push(marker);
+	oms.addMarker(marker);
 }
 
 var infoWindow;
@@ -136,6 +140,7 @@ function showMapLocal(lat, lng, zoom) {
 }
 
 var geocoder = new google.maps.Geocoder();
+//find the latitude and longitude based on address
 function findMapLocalByName(name) {
   geocoder.geocode({'address': name}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
@@ -147,7 +152,47 @@ function findMapLocalByName(name) {
   });
 }
 
+//find the street address based on latitude and longitude
+//use google geocode to find the city and state name
+//after this use our api to find the co_municipio based on the city and state
+function findCityByLatLng(lat, lng){
+	$("#co_municipio").val("");
+	geocoder.geocode({'location': new google.maps.LatLng(lat, lng)}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+    	var cityStateCountry = "";//pattern = city - state, country
+    	var streetCityStateCountry = "";
+    	for(var i = 0, len = results.length; i < len; ++i) {
+	    	if(results[i].types[0]=="administrative_area_level_2"){
+    			cityStateCountry = results[i].formatted_address;
+    		}else if(results[i].types[0]=="street_address" || results[i].types[0]=="route"){
+    			streetCityStateCountry = results[i].formatted_address;
+    		}
+	    }
+		if(streetCityStateCountry!="") $("#local").val(streetCityStateCountry);
+		if(cityStateCountry!=""){
+			var cityState = cityStateCountry.split(",")[0];//pattern = city - state
+			var city = cityState.split(" - ")[0];
+			var state = cityState.split(" - ")[1];
+			$.getJSON(API_VERSION+"/municipios/query?city="+city+"&state="+state, function(json) {
+				if(json.co_municipio){
+					if(DEBUG) console.log("código da cidade encontrado:" + json.co_municipio);
+					$("#co_municipio").val(json.co_municipio);
+				}else{
+					console.log("código da cidade NÃO encontrado");
+				}
+			})
+			.fail(function(jqxhr, textStatus, error) {
+				console.log( "erro ao tentar procurar pelo código da cidade: " + error );
+			})
+		}
+    } else {
+      	if(DEBUG) console.log('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+
 function setMapLocalValue(lat, lng){
+	findCityByLatLng(lat, lng);
 	$("#lat").val(lat);
 	$("#lng").val(lng);
 }
@@ -211,6 +256,50 @@ function initUI() {
 	$('#denuncie').on('click', function( event ) {
 		$('#denuncieWindow').modal('show');
 		autoDetectMapLocal();
+	});
+	var denunciaForm = $("#denuncieWindow form");
+	$("#denuncieWindow form").submit(function( event ) {
+		event.preventDefault();
+		var submitButton = $("#denuncieWindow form :submit");
+		submitButton.button('loading');
+		console.log($("#denuncieWindow form").serialize());
+		$.post(API_VERSION+'/denuncias', $("#denuncieWindow form").serialize(), function(data) {
+	        //data = {"tipo":"6","data":"1985-01-01 00:00:00","lat":"-22.894434099999998","lng":"-43.1917638","co_municipio":"330455","co_cnes":null,"provedor":null,"usuario":1,"updated_at":"2016-11-08 19:37:47","created_at":"2016-11-08 19:37:47","id":11}
+	        $('#denuncieWindow').modal('hide');
+	        var marker = new google.maps.Marker({
+				map: map,
+				icon: tiposDenunciasImagens[data.tipo],
+				position: {
+					lat: Number(data.lat),
+					lng: Number(data.lng)
+				},
+				index: denuncias.length
+			});
+			denuncias.push(data);
+			addMarker(marker);
+			showInfo(marker);
+	    })
+		.fail(function(xhr) {
+			if(xhr.status==422){
+				if(DEBUG) console.log("validação inválida no server side");
+
+				$.each($("#denuncieWindow form").serializeArray(), function(i, field) {
+					$('input[name='+field.name+']').parents(".form-group").removeClass("has-error");
+					$('input[name='+field.name+']').parent().children(".help-block").text("");
+				});
+
+				var fieldsWithErros = JSON.parse(xhr.responseText); 
+				for(var fieldName in fieldsWithErros) {
+					if(DEBUG) console.log(fieldName + ": "+fieldsWithErros[fieldName]);
+					$('input[name='+fieldName+']').parents(".form-group").addClass("has-error");
+					$('input[name='+fieldName+']').parent().children(".help-block").text(fieldsWithErros[fieldName]);
+					$('input[name='+fieldName+']').focus();
+				}
+			}
+		})
+		.always(function() {
+	        submitButton.button('reset');
+		});
 	});
 	
 	//filters
@@ -290,8 +379,14 @@ function initUI() {
 	$('#local').on('typeahead:selected', function (e, datum) {
 		if(DEBUG) console.log("selected: ");
 		if(DEBUG) console.log(datum);
+
+		//show in map
 		if(datum.no_fantasia) showMapLocal(datum.lat, datum.lng, 17);
 		else findMapLocalByName(datum.nome, datum.uf);
+
+		//set values
+		if(datum.co_cnes) $('#co_cnes').val(datum.co_cnes);
+		if(datum.co_municipio) $('#co_municipio').val(datum.co_municipio);
 	});
 
 	//search planos de saúde
@@ -316,13 +411,13 @@ function initUI() {
 		}
 	}
 
-	$('#plano').typeahead({
+	$('#planoLabel').typeahead({
 		hint: true,
 		highlight: true,
 		minLength: 0,
 		limit: 10
     }, {
-		name: 'plano',
+		name: 'planoLabel',
 		source: planosWithDefaults,
 		displayKey: 'nome',
 		templates: {
@@ -334,10 +429,10 @@ function initUI() {
 			]
 		}
 	});
-	$('#plano').on('typeahead:selected', function (e, datum) {
+	$('#planoLabel').on('typeahead:selected', function (e, datum) {
 		if(DEBUG) console.log("selected: ");
 		if(DEBUG) console.log(datum);
-		$('#planoId').val(datum.id);
+		$('#plano').val(datum.id);
 	});
 }
 

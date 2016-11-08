@@ -51,17 +51,28 @@ class DenunciasController extends Controller {
 	public function store(Request $request)
 	{
 		$this->validate($request, [
-			'usuario' => 'required',
 			'tipo' => 'required',
-			'posto' => 'required',
-			'municipio' => 'required',
-			'titulo' => 'required|min:5',
-			'provedor' => 'required',
-			'unidade' => 'required',
+			'propriedade' => 'required',
+			'lat' => 'required',
+			'lng' => 'required',
 			'data' => 'required|date'
 		]);
-		\App\Denuncia::create($request->all());
-		return redirect('denuncias');
+
+
+		$input = $request->all();
+
+		//TODO
+		//usando o usuário de teste, uma vez que não temos o login feito ainda
+		$input["usuario"] = 1;
+
+		//caso algum campo esteja vazio, e algum deles sejam foreign keys no banco, evita erros
+		foreach ($input as &$value) {
+			if (empty($value)) $value = null;
+		}
+		//var_dump($input);
+		//return;
+		$result = \App\Denuncia::create($input);
+		return $result;
 	}
 
 	/**

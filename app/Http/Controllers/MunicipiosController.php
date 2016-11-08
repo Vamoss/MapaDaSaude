@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Input;
 
 class MunicipiosController extends Controller {
 
@@ -47,6 +48,27 @@ class MunicipiosController extends Controller {
 	public function show($id)
 	{
 		//
+	}
+
+	/**
+	 * Display the co_municipio
+	 *
+	 * @param  string  $city
+	 * @param  string  $state
+	 * @return Response
+	 */
+	public function query()
+	{
+		$city = Input::get('city');
+		$state = Input::get('state');
+
+		//ordenando o co_municipio por ordem decrescente, evitamos retornar estados com o mesmo nome da cidade, como é o caso do Rio de Janeiro
+		$id = \App\Municipio::select("co_municipio")->where('nome', $city)->where('uf', $state)->orderBy('co_municipio', 'desc')->first();
+		if(is_null($id)){
+			return "{}";
+		}else{
+			return $id;
+		}
 	}
 
 	/**

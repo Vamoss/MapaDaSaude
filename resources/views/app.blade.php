@@ -200,7 +200,7 @@
                   <div class="row">
                     <form role="form" class="form-horizontal">
                       <div class="form-group">
-                          <label for="email" class="col-sm-2 control-label">
+                          <label for="tipo" class="col-sm-2 control-label">
                               Tipo</label>
                           <div class="col-sm-10">
                             @if (count($tiposDenuncias))
@@ -208,21 +208,24 @@
                                     <input type="radio" name="tipo" value="{{$tipoDenuncia['id']}}">{{$tipoDenuncia['nome']}}<br>
                                 @endforeach
                             @endif
+                              <div class="help-block"></div>
                           </div>
                       </div>
                       <div class="form-group">
                           <label for="data" class="col-sm-2 control-label">
                               Data</label>
                           <div class="col-sm-10">
-                              <input type="text" class="form-control" id="data" placeholder="dd/mm/yyyy" required="" />
+                              <input type="text" class="form-control" id="data" name="data" placeholder="dd/mm/yyyy" required="" />
+                              <div class="help-block"></div>
                           </div>
                       </div>
                       <div class="form-group">
-                          <label for="unidade" class="col-sm-2 control-label">
+                          <label for="propriedade" class="col-sm-2 control-label">
                               Unidade de atendimento</label>
                           <div class="col-sm-10">
-                            <input type="radio" name="unidade" value="publica">Pública<br>
-                            <input type="radio" name="unidade" value="privada">Privada
+                            <input type="radio" name="propriedade" value="publica">Pública<br>
+                            <input type="radio" name="propriedade" value="privada">Privada
+                            <div class="help-block"></div>
                           </div>
                       </div>
                       <div class="form-group">
@@ -233,27 +236,33 @@
                               <div id="mapLocal"></div>
                               <input type="hidden" name="lat" value="" id="lat" />
                               <input type="hidden" name="lng" value="" id="lng" />
+                              <input type="hidden" name="co_municipio" value="" id="co_municipio" />
+                              <input type="hidden" name="co_cnes" value="" id="co_cnes" />
+                              <div class="help-block"></div>
                           </div>
                       </div>
                       <div class="form-group">
-                          <label for="municipio" class="col-sm-2 control-label">
+                          <label for="provedor" class="col-sm-2 control-label">
                               Provedor</label>
                           <div class="col-sm-10">
-                            <input type="radio" name="provedor" value="0">SUS<br>
-                            <input type="radio" name="provedor" value="1">Plano de Saúde
+                            <input type="radio" name="provedor" value="SUS">SUS<br>
+                            <input type="radio" name="provedor" value="Plano de Saúde">Plano de Saúde
+                            <div class="help-block"></div>
                           </div>
                       </div>
                       <div class="form-group">
-                          <label for="plano" class="col-sm-2 control-label">
+                          <label for="planoLabel" class="col-sm-2 control-label">
                               Plano de Saúde</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="plano" placeholder="Digite para buscar ou deixe em vazio" required="" />
-                            <input type="hidden" name="planoId" id="planoId" value="">
+                            <input type="text" class="form-control" id="planoLabel" placeholder="Digite para buscar ou deixe em vazio" required="" />
+                            <input type="hidden" name="plano" id="plano" value="">
+                            <div class="help-block"></div>
                           </div>
                       </div>
                       <div class="row">
-                        <button type="submit" class="btn btn-primary btn-lg col-md-offset-2">Denunciar</button>
+                        <button type="submit" class="btn btn-primary btn-lg col-md-offset-2" data-loading-text="Denunciando">Denunciar</button>
                       </div>
+                      <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                       </form>
                   </div>
               </div>
