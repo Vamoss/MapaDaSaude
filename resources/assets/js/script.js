@@ -444,8 +444,6 @@ function toTitleCase(str)
 /*********
 INIT
 **********/
-function onload() {
-	initUI();
-	initMap();
-	carregaDados();
-}
+initUI();
+initMap();
+carregaDados();

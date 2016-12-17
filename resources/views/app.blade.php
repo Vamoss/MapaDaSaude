@@ -4,10 +4,10 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
-    <link rel="shortcut icon" href="{{ URL::asset('img/favicon.png') }}" />
+    <link rel="shortcut icon" href="{{ asset('/img/favicon.png') }}" />
     <title>Mapa da Sa&uacute;de</title>
   </head>
-  <body onload="onload()">
+  <body>
     <div class="container-fluid">
       
       <!-- top nav begin -->
@@ -259,6 +259,14 @@
                             <div class="help-block"></div>
                           </div>
                       </div>
+                      <div class="form-group">
+                          <label for="descricao" class="col-sm-2 control-label">
+                              Descrição</label>
+                          <div class="col-sm-10">
+                              <textarea id="descricao" name="descricao"></textarea>
+                              <div class="help-block"></div>
+                          </div>
+                      </div>
                       <div class="row">
                         <button type="submit" class="btn btn-primary btn-lg col-md-offset-2" data-loading-text="Denunciando">Denunciar</button>
                       </div>
@@ -276,6 +284,11 @@
     <!-- content end -->
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApquJfOtvb3NYITr_IMJE9vDiXmhuwNTA"></script>
-    {!! Html::script('js/all.js'); !!}
+    <script type="text/javascript" src="{{ asset('/js/jquery-1.11.3.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/typeahead.bundle.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/oms.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/script.js') }}"></script>
+
   </body>
 </html>

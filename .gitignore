@@ -1,13 +1,16 @@
-/vendor
 /node_modules
-/storage
-/Design
+/public/storage
+/storage/*.key
+/vendor
+/.idea
+Homestead.json
+Homestead.yaml
 .env
-*.map
-npm-debug.log
-.DS_Store
-Thumbs.db
-.aws
 
 /public/css/
 /public/js/
+
+.DS_Store
+Thumbs.db
+*.map
+*.log
