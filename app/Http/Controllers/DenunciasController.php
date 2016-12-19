@@ -55,7 +55,7 @@ class DenunciasController extends Controller {
 			'propriedade' => 'required',
 			'lat' => 'required',
 			'lng' => 'required',
-			'data' => 'required|date'
+			'data' => 'required|date_format:"d/m/Y"'
 		]);
 
 
