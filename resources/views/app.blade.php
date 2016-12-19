@@ -283,12 +283,17 @@
     </div>
     <!-- content end -->
 
+    <div id="app">
+      <example></example>
+    </div>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApquJfOtvb3NYITr_IMJE9vDiXmhuwNTA"></script>
     <script type="text/javascript" src="{{ asset('/js/jquery-1.11.3.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/typeahead.bundle.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/oms.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/script.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>
 
   </body>
 </html>
