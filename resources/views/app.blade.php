@@ -279,13 +279,8 @@
       </div>
       <!--denuncieWindow end-->
 
-
     </div>
     <!-- content end -->
-
-    <div id="app">
-      <example></example>
-    </div>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApquJfOtvb3NYITr_IMJE9vDiXmhuwNTA"></script>
     <script type="text/javascript" src="{{ asset('/js/jquery-1.11.3.min.js') }}"></script>
