@@ -1,0 +1,32 @@
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: $blue-navy;
+  color: white;
+  font-size: 12px;
+  line-height: 1;
+
+  .logo {
+    display: flex;
+
+    svg {
+      height: 20px;
+      width: auto;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    span {
+      margin-top: 4px;
+    }
+  }
+
+  .complain {
+    background-color: $blue;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 6px 7px 4px;
+  }
+}

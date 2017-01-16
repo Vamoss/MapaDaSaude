@@ -1,8 +1,5 @@
-@import 'variables';
+@import 'variables-new';
 @import 'fonts';
+@import 'bootstrap';
 
-body {
-  margin: 0;
-  font-family: Hind, sans-serif;
-  background: #ccc;
-}
+@import 'header';
