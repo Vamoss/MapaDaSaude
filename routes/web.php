@@ -29,7 +29,4 @@ Route::get('/api/v1/estabelecimento/query', 'EstabelecimentosController@query');
 Route::get('/api/v1/users', 'UsersController@index');
 
 Route::get('/', 'InicioController@index');
-
-Route::get('/a', function () {
-    return view('welcome');
-});
+Route::get('/home', 'InicioController@home');

@@ -35,6 +35,17 @@ class InicioController extends Controller {
 	}
 
 	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function home()
+	{
+		$tiposDenuncias = \App\TipoDenuncia::select('id', 'nome', 'imagem')->get();
+		return view('home', ['tiposDenuncias' => $tiposDenuncias]);
+	}
+
+	/**
 	 * Show the startup data
 	 *
 	 * @return Response
