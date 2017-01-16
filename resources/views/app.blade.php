@@ -279,7 +279,6 @@
       </div>
       <!--denuncieWindow end-->
 
-
     </div>
     <!-- content end -->
 
@@ -289,6 +288,7 @@
     <script type="text/javascript" src="{{ asset('/js/typeahead.bundle.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/oms.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/script.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>
 
   </body>
 </html>
