@@ -7,6 +7,14 @@
     <title>Chega de Descaso | @yield('title')</title>
   </head>
   <body>
+    <header id="header">
+      <div class="logo">
+        Chega de Descaso | Mapa da Saúde
+      </div>
+      <div>
+        Faça sua denúncia
+      </div>
+    </header>
     @yield('content')
   </body>
 </html>

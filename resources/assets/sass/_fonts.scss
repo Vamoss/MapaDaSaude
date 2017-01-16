@@ -1,0 +1,20 @@
+$fonts-path: 'fonts/';
+
+/* hind-regular - latin */
+@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Hind'), local('Hind-Regular'),
+       url($fonts-path + 'hind.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url($fonts-path + 'hind.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* hind-700 - latin */
+@font-face {
+  font-family: 'Hind';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Hind Bold'), local('Hind-Bold'),
+       url($fonts-path + 'hind-bold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url($fonts-path + 'hind-bold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

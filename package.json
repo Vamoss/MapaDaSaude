@@ -4,7 +4,7 @@
     "prod": "gulp --production",
     "dev": "npm-run-all --print-label --parallel artisan gulp-watch",
     "artisan": "php artisan serve",
-    "gulp-watch": "gulp watch"
+    "gulp-watch": "DISABLE_NOTIFIER=false gulp watch"
   },
   "devDependencies": {
     "bootstrap-sass": "^3.3.7",
