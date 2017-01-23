@@ -15,7 +15,6 @@
     <a href="{{ url('/denuncie') }}">
       <button>Denuncie</button>
     </a>
-  </div>
-  
+  </div>  
 </section>
 @stop
