@@ -41,8 +41,18 @@ class InicioController extends Controller {
 	 */
 	public function home()
 	{
+		return view('home');
+	}
+
+	/**
+	 * Show form for a new complain.
+	 *
+	 * @return Response
+	 */
+	public function complain()
+	{
 		$tiposDenuncias = \App\TipoDenuncia::select('id', 'nome', 'imagem')->get();
-		return view('home', ['tiposDenuncias' => $tiposDenuncias]);
+		return view('complain', ['tiposDenuncias' => $tiposDenuncias]);
 	}
 
 	/**

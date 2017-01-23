@@ -30,3 +30,4 @@ Route::get('/api/v1/users', 'UsersController@index');
 
 Route::get('/', 'InicioController@index');
 Route::get('/home', 'InicioController@home');
+Route::get('/denuncie', 'InicioController@complain');
