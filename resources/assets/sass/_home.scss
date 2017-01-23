@@ -1,0 +1,45 @@
+#home {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 50px);
+  color: white;
+
+  .explore,
+  .complain {
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .explore {
+    background-color: $blue-navy;
+    background-image: url('../img/explore-background.svg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .complain {
+    background-color: $red;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  button {
+    border: none;
+    background-color: $blue;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 10px 15px 8px;
+    font-size: 13px;
+    line-height: 1;
+    margin-top: 15px;
+  }
+}

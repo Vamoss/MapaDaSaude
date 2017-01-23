@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px;
+  height: 50px;
+  padding: 0 15px;
   background-color: $blue-navy;
   color: white;
   font-size: 12px;
@@ -21,12 +22,5 @@
     span {
       margin-top: 4px;
     }
-  }
-
-  .complain {
-    background-color: $blue;
-    text-transform: uppercase;
-    border-radius: 5px;
-    padding: 6px 7px 4px;
   }
 }
