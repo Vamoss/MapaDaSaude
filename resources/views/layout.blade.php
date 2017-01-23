@@ -15,9 +15,6 @@
         </svg>
         <span>Chega de Descaso</span>
       </a>
-      <a href="{{ url('/home') }}" class="complain">
-        Denuncie
-      </a>
     </header>
     @yield('content')
   </body>
