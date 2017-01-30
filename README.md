@@ -39,7 +39,7 @@ npm install
 Compilando os CSSs e JSs
 
 ```
-npm run build
+npm run prod
 ```
 
 Criando o ambiente de desenvolvimento
@@ -57,13 +57,7 @@ php artisan migrate:refresh --seed
 Rodando a aplicação
 
 ```
-php artisan serve
-```
-
-Subindo versão atual para produção
-
-```
-npm run deploy
+npm run dev
 ```
 
 ## Chega de Descaso
