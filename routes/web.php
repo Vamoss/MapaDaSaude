@@ -17,14 +17,14 @@ Route::get('/api/v1/denuncias', 'DenunciasController@index');
 Route::post('/api/v1/denuncias', 'DenunciasController@store');
 
 Route::get('/api/v1/municipios', 'MunicipiosController@index');
-Route::get('/api/v1/municipios/query', 'MunicipiosController@query');
+Route::get('/api/v1/municipios/{state}/{city}', 'MunicipiosController@query');
 
 Route::get('/api/v1/planos', 'PlanosController@index');
 
 Route::get('/api/v1/tipos_denuncias', 'TiposDenunciasController@index');
 
 Route::get('/api/v1/estabelecimento', 'EstabelecimentosController@index');
-Route::get('/api/v1/estabelecimento/query', 'EstabelecimentosController@query');
+Route::get('/api/v1/estabelecimento/{query}', 'EstabelecimentosController@query');
 
 Route::get('/api/v1/users', 'UsersController@index');
 

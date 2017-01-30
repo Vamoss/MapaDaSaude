@@ -16,9 +16,30 @@ html, body, .container-fluid, .row, .map {
 
 body { padding-top: 50px; }
 
-.navbar-default{
+.navbar-default {
   background-color: #fff;
   border: 0;
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+
+    svg {
+      height: 20px;
+      width: auto;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    span {
+      margin-top: 4px;
+    }
+  }
+
+  .navbar-toggle,
+  .navbar-right {
+    display: none;
+  }
 }
 
 #map {
@@ -42,6 +63,9 @@ body { padding-top: 50px; }
   font-size: 11px;
 }
 
+.sidebar {
+  padding-bottom: 30px;
+}
 
 #loginWindow .nav-tabs {
     margin-bottom: 15px;

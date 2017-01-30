@@ -91,6 +91,7 @@ function initMapLocal() {
 	if(mapLocal) return;
 
 	mapLocal = new google.maps.Map(document.getElementById('mapLocal'), {
+		scrollwheel: false,
 		streetViewControl: false,
 		mapTypeControl: true,
 		mapTypeControlOptions: {
@@ -173,7 +174,7 @@ function findCityByLatLng(lat, lng){
 			var cityState = cityStateCountry.split(",")[0];//pattern = city - state
 			var city = cityState.split(" - ")[0];
 			var state = cityState.split(" - ")[1];
-			$.getJSON(API_VERSION+"/municipios/query?city="+city+"&state="+state, function(json) {
+			$.getJSON(API_VERSION+"/municipios/"+state+"/"+city, function(json) {
 				if(json.co_municipio){
 					if(DEBUG) console.log("código da cidade encontrado:" + json.co_municipio);
 					$("#co_municipio").val(json.co_municipio);
@@ -339,7 +340,7 @@ function initUI() {
 	//search estabelecimento
 	var estabelecimentosEngine = new Bloodhound({
 		remote: {
-			url: API_VERSION+'/estabelecimento/query?estabelecimento=%QUERY',
+			url: API_VERSION+'/estabelecimento/%QUERY',
 			wildcard: '%QUERY'
 		},
 		datumTokenizer: function(d) {

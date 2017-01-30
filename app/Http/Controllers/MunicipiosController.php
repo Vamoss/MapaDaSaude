@@ -57,11 +57,8 @@ class MunicipiosController extends Controller {
 	 * @param  string  $state
 	 * @return Response
 	 */
-	public function query()
+	public function query(Request $request, $state, $city)
 	{
-		$city = Input::get('city');
-		$state = Input::get('state');
-
 		//ordenando o co_municipio por ordem decrescente, evitamos retornar estados com o mesmo nome da cidade, como é o caso do Rio de Janeiro
 		$id = \App\Municipio::select("co_municipio")->where('nome', $city)->where('uf', $state)->orderBy('co_municipio', 'desc')->first();
 		if(is_null($id)){

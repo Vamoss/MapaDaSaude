@@ -4,7 +4,6 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use Input;
 use Response;
 
 class EstabelecimentosController extends Controller {
@@ -20,9 +19,8 @@ class EstabelecimentosController extends Controller {
 		return compact('estabelecimentos');
 	}
 
-	public function query()
+	public function query(Request $request, $query)
 	{
-		$query = Input::get('estabelecimento');
 		$searchValues = preg_split('/\s+/', $query); // split on 1+ whitespace
 
 		//municipios
