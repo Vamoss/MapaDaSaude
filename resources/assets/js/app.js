@@ -339,7 +339,7 @@ function initUI() {
 	//search estabelecimento
 	var estabelecimentosEngine = new Bloodhound({
 		remote: {
-			url: API_VERSION+'/estabelecimento/query?estabelecimento=%QUERY',
+			url: API_VERSION+'/estabelecimento/%QUERY',
 			wildcard: '%QUERY'
 		},
 		datumTokenizer: function(d) {

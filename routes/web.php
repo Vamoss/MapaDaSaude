@@ -24,7 +24,7 @@ Route::get('/api/v1/planos', 'PlanosController@index');
 Route::get('/api/v1/tipos_denuncias', 'TiposDenunciasController@index');
 
 Route::get('/api/v1/estabelecimento', 'EstabelecimentosController@index');
-Route::get('/api/v1/estabelecimento/query', 'EstabelecimentosController@query');
+Route::get('/api/v1/estabelecimento/{query}', 'EstabelecimentosController@query');
 
 Route::get('/api/v1/users', 'UsersController@index');
 
