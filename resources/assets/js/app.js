@@ -91,6 +91,7 @@ function initMapLocal() {
 	if(mapLocal) return;
 
 	mapLocal = new google.maps.Map(document.getElementById('mapLocal'), {
+		scrollwheel: false,
 		streetViewControl: false,
 		mapTypeControl: true,
 		mapTypeControlOptions: {
