@@ -173,7 +173,7 @@ function findCityByLatLng(lat, lng){
 			var cityState = cityStateCountry.split(",")[0];//pattern = city - state
 			var city = cityState.split(" - ")[0];
 			var state = cityState.split(" - ")[1];
-			$.getJSON(API_VERSION+"/municipios/query?city="+city+"&state="+state, function(json) {
+			$.getJSON(API_VERSION+"/municipios/"+state+"/"+city, function(json) {
 				if(json.co_municipio){
 					if(DEBUG) console.log("código da cidade encontrado:" + json.co_municipio);
 					$("#co_municipio").val(json.co_municipio);
