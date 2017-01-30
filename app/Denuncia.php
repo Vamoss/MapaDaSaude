@@ -15,6 +15,6 @@ class Denuncia extends Model {
 	
 	public function setDataAttribute($date)
 	{
-		$this->attributes['data'] = Carbon::parse($date);
+		$this->attributes['data'] = Carbon::createFromFormat('d/m/Y', $date);
 	}
 }
