@@ -85,8 +85,10 @@
         <div class="col-sm-4 col-md-3 sidebar">
           
           <div class="row">
-            <h2>Lorem ipsum dolor</h2>
-            sit amet, consectetur adipiscing elit. Suspendisse quis felis vitae mauris pulvinar dignissim hendrerit quis risus. Fusce in urna eu justo consectetur suscipit. Pellentesque sagittis vel metus in dictum. Sed quis mauris tempus, finibus lectus at, laoreet orci. <br/><br/>
+            <h2>Mapa da Saúde</h2>
+            <p>a garantia do direito essencial a vida se faz através dá participação social. a partir do seu relato iremos monitorar os serviços de saúde disponibilizados à população.</p>
+            <p>nosso papel é contribuir para o processo de formulação e fortalecimento de políticas públicas destinadas ao setor de direitos humanos e saúde.</p>
+            <p>junte-se a nós nessa luta em defesa de uma saúde digna, humanizada e acessível a todos.</p>
           </div><!--/row-->
           <button type="button" class="btn btn-success btn-lg center-block" id="denuncie" aria-label="Left Align">
            <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Faça uma denúncia
