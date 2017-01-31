@@ -76,3 +76,10 @@ Esta é a principal referência, e seu diferencial é tratar do problema da segu
 ### Criativos locais
 http://www.criativoslocais.com.br/
 
+
+## Deploy
+
+- acessar o servidor remotamente
+- `git pull`
+- `npm install`
+- `npm run prod`
