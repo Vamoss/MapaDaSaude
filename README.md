@@ -60,7 +60,17 @@ Rodando a aplicação
 npm run dev
 ```
 
+
+## Deploy
+
+- acessar o servidor remotamente
+- `git pull`
+- `npm install`
+- `npm run prod`
+
+
 ## Chega de Descaso
+
 A definição de onde a ferramenta será publicada ainda está em aberto, apesar de haver a motivação em colaborar com o Movimento Chega de Descaso, projeto iniciado pelo Leandro Farias que perdeu sua esposa após esperar 28 horas por uma cirurgia.
 
 Conheça mais sobre este projeto aqui:
@@ -76,10 +86,3 @@ Esta é a principal referência, e seu diferencial é tratar do problema da segu
 ### Criativos locais
 http://www.criativoslocais.com.br/
 
-
-## Deploy
-
-- acessar o servidor remotamente
-- `git pull`
-- `npm install`
-- `npm run prod`
